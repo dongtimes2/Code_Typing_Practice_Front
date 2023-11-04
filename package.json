@@ -37,7 +37,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "wait-on http://localhost:3000 && electron .",
-    "pack": "npm run build && electron-builder build -c.extraMetadata.main=build/electron.js"
+    "pack": "npm run build && electron-builder build -c.extraMetadata.main=build/electron.js",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +60,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
     "concurrently": "^7.2.1",
     "cross-env": "^7.0.3",
     "electron": "^19.0.4",
@@ -68,6 +71,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.0",
     "prettier": "2.6.2",
     "wait-on": "^6.0.1"
   },
