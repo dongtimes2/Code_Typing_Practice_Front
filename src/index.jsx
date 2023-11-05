@@ -11,7 +11,7 @@ const store = createStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const Router = ({ children }) => {
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.DEV) {
     return <BrowserRouter>{children}</BrowserRouter>;
   }
   return <HashRouter>{children}</HashRouter>;

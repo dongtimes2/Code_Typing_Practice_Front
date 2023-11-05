@@ -17,7 +17,7 @@ function* getWordListSaga(action) {
 
   const result = yield call(() => {
     return axiosGetRequest(
-      process.env.REACT_APP_SERVER_URL + '/languages/' + language,
+      import.meta.env.VITE_SERVER_URL + '/languages/' + language,
       {
         params: { type: practiceType },
       },
@@ -41,7 +41,7 @@ function* getSentenceListSaga(action) {
 
   const result = yield call(() => {
     return axiosGetRequest(
-      process.env.REACT_APP_SERVER_URL + '/languages/' + language,
+      import.meta.env.VITE_SERVER_URL + '/languages/' + language,
       {
         params: { type: practiceType },
       },
@@ -65,7 +65,7 @@ function* getParagraphListSaga(action) {
 
   const result = yield call(() => {
     return axiosGetRequest(
-      process.env.REACT_APP_SERVER_URL + '/languages/' + language,
+      import.meta.env.VITE_SERVER_URL + '/languages/' + language,
       {
         params: { type: practiceType },
       },

@@ -47,7 +47,7 @@ function* loginSaga() {
 
     const userDbData = yield call(() => {
       return axiosGetRequest(
-        process.env.REACT_APP_SERVER_URL + '/users/' + authData.user.uid,
+        import.meta.env.VITE_SERVER_URL + '/users/' + authData.user.uid,
       );
     });
 
@@ -56,7 +56,7 @@ function* loginSaga() {
     } else {
       yield call(() => {
         axiosPostRequest(
-          process.env.REACT_APP_SERVER_URL + '/auth/login',
+          import.meta.env.VITE_SERVER_URL + '/auth/login',
           authData.user,
         );
       });
@@ -65,7 +65,7 @@ function* loginSaga() {
 
       const userDbData = yield call(() => {
         return axiosGetRequest(
-          process.env.REACT_APP_SERVER_URL + '/users/' + authData.user.uid,
+          import.meta.env.VITE_SERVER_URL + '/users/' + authData.user.uid,
         );
       });
 
@@ -102,7 +102,7 @@ function* logoutSaga() {
 
 function* changeSettingSaga(action) {
   yield axiosPatchRequest(
-    process.env.REACT_APP_SERVER_URL + '/users/' + action.payload.id,
+    import.meta.env.VITE_SERVER_URL + '/users/' + action.payload.id,
     {
       selectedLanguage: action.payload.selectedLanguageSetting,
       soundEffects: action.payload.soundEffectsSetting,
@@ -115,7 +115,7 @@ function* changeSettingSaga(action) {
 function* loadUserDbDataSaga(action) {
   const userDbData = yield call(() => {
     return axiosGetRequest(
-      process.env.REACT_APP_SERVER_URL + '/users/' + action.payload.uid,
+      import.meta.env.VITE_SERVER_URL + '/users/' + action.payload.uid,
     );
   });
 
@@ -146,7 +146,7 @@ function* refreshSaga() {
 function* loadUserRecordSaga(action) {
   const userRecord = yield call(() => {
     return axiosGetRequest(
-      process.env.REACT_APP_SERVER_URL +
+      import.meta.env.VITE_SERVER_URL +
         '/users/' +
         action.payload.id +
         '/record/' +
@@ -159,7 +159,7 @@ function* loadUserRecordSaga(action) {
 
 function* updateUserRecordSaga(action) {
   yield axiosPatchRequest(
-    process.env.REACT_APP_SERVER_URL +
+    import.meta.env.VITE_SERVER_URL +
       '/users/' +
       action.payload.uid +
       '/record/' +
