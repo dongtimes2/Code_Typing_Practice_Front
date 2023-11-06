@@ -46,6 +46,7 @@
     ],
     "testing-library/no-node-access": "off",
     "react/prop-types": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }]
   }
 }
