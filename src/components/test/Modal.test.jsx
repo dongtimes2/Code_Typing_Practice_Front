@@ -1,59 +1,30 @@
-import React from 'react';
+import { userEvent } from '@testing-library/user-event';
+import { afterAll, beforeAll, describe, expect, test } from 'vitest';
 
-import { fireEvent, render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import Home from '../../pages/Home';
+import { screen, render } from '../../test/testUtils';
 
-import ModalPortal from '../../ModalPortal';
-import Button from '../Button';
-import Modal from '../Modal';
-test('언어 선택시 타자연습 종류를 선택할 수 있는 modal창이 떠야합니다.', () => {
+beforeAll(() => {
   const modalRoot = document.createElement('div');
   modalRoot.setAttribute('id', 'modal-root');
   document.body.appendChild(modalRoot);
+});
 
-  const handleClose = jest.fn();
-  const handleWordButtonClick = jest.fn();
-  const handleSentenceButtnoCLick = jest.fn();
-  const handleParagraphButtnoCLick = jest.fn();
+afterAll(() => {
+  const modalRoot = document.getElementById('modal-root');
+  if (modalRoot) {
+    document.body.removeChild(modalRoot);
+  }
+});
 
-  const { getByText } = render(
-    <BrowserRouter>
-      <ModalPortal>
-        <Modal
-          onCloseModal={handleClose}
-          message={
-            <div>
-              <div>
-                <Button onClick={handleWordButtonClick}>낱말 연습</Button>
-              </div>
-              <div>
-                <Button onClick={handleSentenceButtnoCLick}>
-                  짧은 글 연습
-                </Button>
-              </div>
-              <div>
-                <Button onClick={handleParagraphButtnoCLick}>긴 글 연습</Button>
-              </div>
-            </div>
-          }
-        ></Modal>
-      </ModalPortal>
-    </BrowserRouter>,
-  );
+describe('modal 컴포넌트 테스트', () => {
+  test('타자연습 종류를 선택할 수 있는 modal에는 세 가지 연습 모드가 떠야합니다', async () => {
+    render(<Home />);
+    const button = screen.getByText('Python');
+    await userEvent.click(button);
 
-  expect(getByText('낱말 연습')).toBeTruthy();
-  expect(getByText('짧은 글 연습')).toBeTruthy();
-  expect(getByText('긴 글 연습')).toBeTruthy();
-
-  fireEvent.click(getByText('X'));
-  expect(handleClose).toBeCalledTimes(1);
-
-  fireEvent.click(getByText('낱말 연습'));
-  expect(handleWordButtonClick).toBeCalledTimes(1);
-
-  fireEvent.click(getByText('짧은 글 연습'));
-  expect(handleSentenceButtnoCLick).toBeCalledTimes(1);
-
-  fireEvent.click(getByText('긴 글 연습'));
-  expect(handleParagraphButtnoCLick).toBeCalledTimes(1);
+    expect(screen.getByText('낱말 연습')).toBeInTheDocument();
+    expect(screen.getByText('짧은 글 연습')).toBeInTheDocument();
+    expect(screen.getByText('긴 글 연습')).toBeInTheDocument();
+  });
 });

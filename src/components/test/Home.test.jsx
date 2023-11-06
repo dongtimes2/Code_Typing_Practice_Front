@@ -1,35 +1,52 @@
-import React from 'react';
-
-import '@testing-library/jest-dom/extend-expect';
-import { screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { BrowserRouter } from 'react-router-dom';
+import { userEvent } from '@testing-library/user-event';
+import { afterAll, beforeAll, describe, expect, test } from 'vitest';
 
 import Home from '../../pages/Home';
-import { renderTest } from '../../utils/renderTest';
+import { screen, render } from '../../test/testUtils';
 
-const modalRoot = document.createElement('div');
-modalRoot.setAttribute('id', 'modal-root');
-document.body.appendChild(modalRoot);
-
-beforeEach(() => {
-  renderTest(
-    <BrowserRouter>
-      <Home />
-    </BrowserRouter>,
-  );
+beforeAll(() => {
+  const modalRoot = document.createElement('div');
+  modalRoot.setAttribute('id', 'modal-root');
+  document.body.appendChild(modalRoot);
 });
 
-test('홈페이지에 배너가 보여야 합니다.', () => {
-  const headerElement = screen.getByTestId('home-banner');
-
-  expect(headerElement).toHaveTextContent('Choose What You Want To Practice!');
+afterAll(() => {
+  const modalRoot = document.getElementById('modal-root');
+  if (modalRoot) {
+    document.body.removeChild(modalRoot);
+  }
 });
 
-test('Python언어를 눌렀을 경우, 모달창이 보여야 합니다.', () => {
-  userEvent.click(screen.getByTestId('python'));
+describe('Home 컴포넌트 테스트', () => {
+  test('배너가 보여야 합니다.', () => {
+    render(<Home />);
+    const bannerElement = screen.getByTestId('home-banner');
+    expect(bannerElement).toHaveTextContent(
+      'Choose What You Want To Practice!',
+    );
+  });
 
-  const sentencePractice = screen.getByText(/긴 글 연습/i);
+  test('python 언어 버튼을 클릭했을 때 modal이 떠야 합니다.', async () => {
+    render(<Home />);
+    const pythonButton = screen.getByText('Python');
+    await userEvent.click(pythonButton);
+    const modalElement = screen.getByText(/긴 글 연습/i);
+    expect(modalElement).toBeInTheDocument();
+  });
 
-  expect(sentencePractice).toBeInTheDocument();
+  test('c 언어 버튼을 클릭했을 때 modal이 떠야 합니다.', async () => {
+    render(<Home />);
+    const cButton = screen.getByText('C');
+    await userEvent.click(cButton);
+    const modalElement = screen.getByText(/긴 글 연습/i);
+    expect(modalElement).toBeInTheDocument();
+  });
+
+  test('javaScript 언어 버튼을 클릭했을 때 modal이 떠야 합니다.', async () => {
+    render(<Home />);
+    const javaScriptButton = screen.getByText('JavaScript');
+    await userEvent.click(javaScriptButton);
+    const modalElement = screen.getByText(/긴 글 연습/i);
+    expect(modalElement).toBeInTheDocument();
+  });
 });

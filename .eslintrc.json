@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true,
@@ -42,6 +43,9 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "testing-library/no-node-access": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "off"
   }
 }
