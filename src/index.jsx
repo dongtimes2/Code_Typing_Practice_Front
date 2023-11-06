@@ -1,26 +1,11 @@
-import React from 'react';
-
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 import App from './App';
-import createStore from './store';
+import AppContainer from './container/AppContainer';
 
-const store = createStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-const Router = ({ children }) => {
-  if (import.meta.env.DEV) {
-    return <BrowserRouter>{children}</BrowserRouter>;
-  }
-  return <HashRouter>{children}</HashRouter>;
-};
-
 root.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
+  <AppContainer>
+    <App />
+  </AppContainer>,
 );
