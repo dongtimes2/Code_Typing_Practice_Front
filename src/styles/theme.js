@@ -3,6 +3,9 @@ const colors = {
   black: '#000000',
   pointBlue: '#0F4C75',
   pointDarkBlue: '#1B262C',
+  pointLightBlue: '#BBE1FA',
+  pointWhiteBlue: '#EFFFFF',
+  gray: '#49515D',
 };
 
 const fontSizes = {
