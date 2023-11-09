@@ -5,7 +5,7 @@ import theme from '../../styles/theme';
 const buttonCss = css`
   width: 100%;
   height: 3.25rem;
-  font-size: ${theme.fontSizes.lg};
+  font-size: ${theme.fontSizes.xxl};
   font-weight: ${theme.fontWeights.bold};
   border: none;
   border-radius: 3.25rem;
