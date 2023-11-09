@@ -1,12 +1,9 @@
 import { render } from '@testing-library/react';
-import { HashRouter } from 'react-router-dom';
 
-const AllTheProviders = ({ children }) => {
-  return <HashRouter>{children}</HashRouter>;
-};
+import AppContainer from '../container/AppContainer';
 
 const customRender = (ui, options) =>
-  render(ui, { wrapper: AllTheProviders, ...options });
+  render(ui, { wrapper: AppContainer, ...options });
 
 export { screen } from '@testing-library/react';
 export { customRender as render };
