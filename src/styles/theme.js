@@ -7,6 +7,7 @@ const colors = {
   pointLightBlue: '#BBE1FA',
   pointWhiteBlue: '#EFFFFF',
   gray: '#49515D',
+  lightGray: '#C5C5C5',
 };
 
 const fontSizes = {
