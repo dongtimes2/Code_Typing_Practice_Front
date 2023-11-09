@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import Layout from './layout/Layout';
 import logoImageUrl from '../../assets/images/logo.webp';
 import Button from '../../components/Button/Button';
+import { PATH } from '../../constants/path';
 
 const NotFound = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/');
+    navigate(PATH.HOME);
   };
 
   return (
