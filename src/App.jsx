@@ -1,23 +1,16 @@
-import React, { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import Layout from './components/Layout/Layout';
+import Home from './pages/Home/Home';
 
-import './App.scss';
-import Layout from './components/Layout';
-import { startRefresh } from './features/userSlice';
-
-function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(startRefresh());
-  }, []);
-
+const App = () => {
   return (
-    <div>
-      <Layout />
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Layout>
   );
-}
+};
 
 export default App;
