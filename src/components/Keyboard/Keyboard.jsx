@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 
 import { KEY_DATA } from './constants/key';
+import { KEYBOARD_HEIGHT } from '../../constants/layout';
 import theme from '../../styles/theme';
 
 const keyboardCss = css`
@@ -11,7 +12,8 @@ const keyboardCss = css`
   gap: 0.25rem;
   justify-content: center;
   width: 65.5rem;
-  height: 23rem;
+  height: ${KEYBOARD_HEIGHT};
+  margin: 0 auto;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: ${theme.colors.lightGray};
