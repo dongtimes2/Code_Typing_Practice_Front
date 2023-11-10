@@ -15,6 +15,7 @@ const headerCss = css`
   font-size: ${theme.fontSizes.xl};
   font-weight: ${theme.fontWeights.bold};
   padding: 0 1.25rem;
+  z-index: 900;
 `;
 
 const authAreaCss = css`
