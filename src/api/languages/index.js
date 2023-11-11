@@ -12,5 +12,10 @@ const getLanguages = async () => {
 };
 
 export const useGetLanguages = () => {
-  return useQuery({ queryKey: ['languages'], queryFn: getLanguages });
+  return useQuery({
+    queryKey: ['languages'],
+    queryFn: getLanguages,
+    staleTime: 1000 * 60 * 60 * 24 * 7,
+    cacheTime: 1000 * 60 * 60 * 24 * 7,
+  });
 };
