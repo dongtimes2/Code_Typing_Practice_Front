@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 
-import { KEY_DATA } from './constants/key';
+import { KEY_DATA } from '../../constants/key';
 import { KEYBOARD_HEIGHT } from '../../constants/layout';
 import theme from '../../styles/theme';
 
