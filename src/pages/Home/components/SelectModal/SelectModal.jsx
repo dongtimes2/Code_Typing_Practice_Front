@@ -33,13 +33,13 @@ const modalCss = css`
   }
 `;
 
-const SelectModal = () => {
+const SelectModal = ({ onTypeSelect }) => {
   const handleModalClick = (event) => {
     event.stopPropagation();
   };
 
   const handleButtonClick = (type) => {
-    //
+    onTypeSelect(type);
   };
 
   return (
