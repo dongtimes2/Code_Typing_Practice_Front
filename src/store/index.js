@@ -1,57 +1,21 @@
-import createSagaMiddleware from '@redux-saga/core';
-import { configureStore } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
-import { all, fork } from 'redux-saga/effects';
+import { create } from 'zustand';
 
-import {
-  watchGetParagraphList,
-  watchGetSentenceList,
-  watchGetWordList,
-} from '../features/problemSaga';
-import problemSlice from '../features/problemSlice';
-import {
-  watchLogin,
-  watchAnonymousLogin,
-  watchLogout,
-  watchChangeSetting,
-  watchLoadUserDbData,
-  watchRefresh,
-  watchLoadUserRecord,
-  watchupdateUserRecord,
-} from '../features/userSaga';
-import userSlice from '../features/userSlice';
+export const useNavigationStore = create((set) => ({
+  language: '',
+  type: '',
+  setLanguage: (language) => set({ language }),
+  setType: (type) => set({ type }),
+}));
 
-const sagaMiddleware = createSagaMiddleware();
-
-function* rootSaga() {
-  yield all([
-    fork(watchLogin),
-    fork(watchAnonymousLogin),
-    fork(watchLogout),
-    fork(watchChangeSetting),
-    fork(watchLoadUserDbData),
-    fork(watchRefresh),
-    fork(watchGetWordList),
-    fork(watchGetSentenceList),
-    fork(watchGetParagraphList),
-    fork(watchupdateUserRecord),
-    fork(watchLoadUserRecord),
-  ]);
-}
-
-const createStore = () => {
-  const store = configureStore({
-    reducer: {
-      user: userSlice,
-      problem: problemSlice,
-    },
-    devTools: true,
-    middleware: [sagaMiddleware],
-  });
-
-  sagaMiddleware.run(rootSaga);
-
-  return store;
-};
-
-export default createStore;
+export const useResultStore = create((set) => ({
+  totalAccuracy: 0,
+  totalSpeed: 0,
+  totalTime: 0,
+  totalTypoCount: 0,
+  setTotalAccuracy: (totalAccuracy) => set({ totalAccuracy }),
+  setTotalSpeed: (totalSpeed) => set({ totalSpeed }),
+  setTotalTime: (totalTime) => set({ totalTime }),
+  setTotalTypoCount: (totalTypoCount) => set({ totalTypoCount }),
+  reset: () =>
+    set({ totalAccuracy: 0, totalSpeed: 0, totalTime: 0, totalTypoCount: 0 }),
+}));
