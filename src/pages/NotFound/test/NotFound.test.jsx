@@ -1,8 +1,10 @@
+import { QueryClientProvider } from '@tanstack/react-query';
 import { render as originalRender } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { describe, expect, test } from 'vitest';
 
+import { queryClient } from '../../../api/config/query';
 import { render, screen } from '../../../test/testUtils';
 import Home from '../../Home/Home';
 import NotFound from '../NotFound';
@@ -24,12 +26,14 @@ describe('NotFound 페이지 통합 테스트', () => {
 
   test('첫 화면으로 이동하기 버튼을 누르면 홈으로 이동해야 합니다', async () => {
     originalRender(
-      <MemoryRouter initialEntries={['/invalid-url']}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-      </MemoryRouter>,
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={['/invalid-url']}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+        </MemoryRouter>
+      </QueryClientProvider>,
     );
 
     const buttonElement = screen.getByRole('button', {
