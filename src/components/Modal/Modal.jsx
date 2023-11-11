@@ -13,8 +13,9 @@ const backgroundCss = css`
   background-color: ${theme.colors.black50};
 `;
 
-const Modal = ({ children, setShowModal }) => {
+const Modal = ({ children, setShowModal, disableBackgroundExit = false }) => {
   const handleBackgroundClick = () => {
+    if (disableBackgroundExit) return;
     setShowModal(false);
   };
 
