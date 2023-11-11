@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
 
 import { HEADER_HEIGHT } from '../../constants/layout';
+import { PATH } from '../../constants/path';
 import theme from '../../styles/theme';
 
 const headerCss = css`
@@ -30,9 +32,15 @@ const authAreaCss = css`
 `;
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate(PATH.HOME);
+  };
+
   return (
     <header css={headerCss}>
-      <div>
+      <div onClick={handleLogoClick}>
         <span>Code Typing Practice</span>
       </div>
       <div css={authAreaCss}>
