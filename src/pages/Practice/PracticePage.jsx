@@ -15,11 +15,15 @@ const PracticePage = () => {
   const reset = useResultStore((state) => state.reset);
 
   const [isFinished, setIsFinished] = useState(false);
+  const [resetSeed, setResetSeed] = useState(0);
 
   const navigate = useNavigate();
 
   const handleReplayButtonClick = () => {
+    setResetSeed((prev) => prev + 1);
+    queryClient.resetQueries(['practice', language, type]);
     reset();
+    setIsFinished(false);
   };
 
   const handleGoHomeButtonClick = () => {
@@ -41,7 +45,9 @@ const PracticePage = () => {
   return (
     <Layout>
       <div className="practiceArea">
-        {type === 'word' && <WordPractice setIsFinished={setIsFinished} />}
+        {type === 'word' && (
+          <WordPractice setIsFinished={setIsFinished} onReset={resetSeed} />
+        )}
       </div>
       <div className="keyboardArea">
         <Keyboard />

@@ -79,7 +79,7 @@ const practiceCss = css`
   }
 `;
 
-const WordPractice = ({ setIsFinished }) => {
+const WordPractice = ({ setIsFinished, onReset }) => {
   const language = useNavigationStore((state) => state.language);
   const type = useNavigationStore((state) => state.type);
   const setTotalAccuracy = useResultStore((state) => state.setTotalAccuracy);
@@ -138,6 +138,14 @@ const WordPractice = ({ setIsFinished }) => {
   const handleBlur = () => {
     inputRef.current.focus();
   };
+
+  useEffect(() => {
+    if (onReset === 0) return;
+    setIndex(0);
+    setAccuracy(0);
+    setTypoCount(0);
+    setProgress(0);
+  }, [onReset]);
 
   useEffect(() => {
     setAccuracy(getAccuracy(index - typoCount, index));
