@@ -20,5 +20,7 @@ export const useGetPractice = (language, type, quantity) => {
     queryKey: ['practice', language, type, quantity],
     queryFn: () => getPractice(language, type, quantity),
     enabled: !!language && !!type && !!quantity,
+    staleTime: 1000 * 60 * 60 * 24 * 7,
+    cacheTime: 1000 * 60 * 60 * 24 * 7,
   });
 };
