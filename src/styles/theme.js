@@ -8,6 +8,7 @@ const colors = {
   pointWhiteBlue: '#EFFFFF',
   gray: '#49515D',
   lightGray: '#C5C5C5',
+  whiteGray: '#EBEBEB',
 };
 
 const fontSizes = {
@@ -19,6 +20,8 @@ const fontSizes = {
   xxl: '24px',
   xxxl: '28px',
   xxxxl: '32px',
+  xxxxxl: '36px',
+  xxxxxxl: '40px',
 };
 
 const fontWeights = {
