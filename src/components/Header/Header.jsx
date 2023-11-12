@@ -18,6 +18,10 @@ const headerCss = css`
   font-weight: ${theme.fontWeights.bold};
   padding: 0 1.25rem;
   z-index: 900;
+
+  .logoArea {
+    cursor: pointer;
+  }
 `;
 
 const authAreaCss = css`
@@ -40,7 +44,7 @@ const Header = () => {
 
   return (
     <header css={headerCss}>
-      <div onClick={handleLogoClick}>
+      <div className="logoArea" onClick={handleLogoClick}>
         <span>Code Typing Practice</span>
       </div>
       <div css={authAreaCss}>
