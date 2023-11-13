@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ResultModal from './components/ResultModal/ResultModal';
+import ShortPractice from './components/ShortPractice/ShortPractice';
 import WordPractice from './components/WordPractice/WordPractice';
 import Layout from './layout/Layout';
 import { queryClient } from '../../api/config/query';
@@ -48,6 +49,9 @@ const PracticePage = () => {
         {type === 'word' && (
           <WordPractice setIsFinished={setIsFinished} onReset={resetSeed} />
         )}
+        {type === 'short' && (
+          <ShortPractice setIsFinished={setIsFinished} onReset={resetSeed} />
+        )}
       </div>
       <div className="keyboardArea">
         <Keyboard />
@@ -56,6 +60,7 @@ const PracticePage = () => {
       {isFinished && (
         <Modal disableBackgroundExit>
           <ResultModal
+            type={type}
             onReplayButtonClick={handleReplayButtonClick}
             onGoHomeButtonClick={handleGoHomeButtonClick}
           />

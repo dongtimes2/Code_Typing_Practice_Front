@@ -36,15 +36,17 @@ const modalCss = css`
   }
 `;
 
-const ResultModal = ({ onReplayButtonClick, onGoHomeButtonClick }) => {
+const ResultModal = ({ type, onReplayButtonClick, onGoHomeButtonClick }) => {
   const totalAccuracy = useResultStore((state) => state.totalAccuracy);
   const totalTypoCount = useResultStore((state) => state.totalTypoCount);
+  const totalTypingSpeed = useResultStore((state) => state.totalTypingSpeed);
 
   return (
     <div css={modalCss} data-testid="modal">
       <div className="dataArea">
         <p>정확도: {totalAccuracy}%</p>
-        <p>오타수: {totalTypoCount}개</p>
+        {type === 'word' && <p>오타수: {totalTypoCount}개</p>}
+        {type === 'short' && <p>평균 타수: {totalTypingSpeed}타</p>}
       </div>
       <div className="buttonArea">
         <Button onClick={onReplayButtonClick}>다시 연습하기</Button>
