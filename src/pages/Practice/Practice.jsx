@@ -10,7 +10,7 @@ import Keyboard from '../../components/Keyboard/Keyboard';
 import Modal from '../../components/Modal/Modal';
 import { useNavigationStore, useResultStore } from '../../store';
 
-const PracticePage = () => {
+const Practice = () => {
   const language = useNavigationStore((state) => state.language);
   const type = useNavigationStore((state) => state.type);
   const reset = useResultStore((state) => state.reset);
@@ -70,4 +70,4 @@ const PracticePage = () => {
   );
 };
 
-export default PracticePage;
+export default Practice;
