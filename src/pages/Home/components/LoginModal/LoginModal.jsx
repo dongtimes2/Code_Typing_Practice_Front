@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '../../../../components/Button/Button';
+import { PATH } from '../../../../constants/path';
 import theme from '../../../../styles/theme';
 
 const modalCss = css`
@@ -13,7 +15,7 @@ const modalCss = css`
   justify-content: space-between;
   align-items: center;
   width: 25%;
-  height: 50%;
+  height: 40%;
   padding: 1rem 1rem 2rem;
   background-color: ${theme.colors.white};
 
@@ -24,18 +26,20 @@ const modalCss = css`
 `;
 
 const LoginModal = () => {
+  const navigate = useNavigate();
+
   const handleModalClick = (event) => {
     event.stopPropagation();
   };
 
   const handleButtonClick = () => {
-    //
+    navigate(PATH.LOGIN);
   };
 
   return (
     <div css={modalCss} onClick={handleModalClick} data-testid="modal">
-      <p id="title">Code Typing Practice</p>
-      <Button onClick={handleButtonClick}>로그인</Button>
+      <p id="title">로그인이 필요합니다</p>
+      <Button onClick={handleButtonClick}>로그인 하러 가기</Button>
     </div>
   );
 };
