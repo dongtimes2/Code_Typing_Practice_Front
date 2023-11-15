@@ -1,8 +1,10 @@
 import { css } from '@emotion/react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
+import typingSound from '../../audios/typingSound.mp3';
 import { KEY_DATA } from '../../constants/key';
 import { KEYBOARD_HEIGHT } from '../../constants/layout';
+import { usePracticeStateStore, useUserInfoStore } from '../../store';
 import theme from '../../styles/theme';
 
 const keyboardCss = css`
@@ -60,15 +62,32 @@ const keyboardCss = css`
 `;
 
 const Keyboard = () => {
+  const sound = useUserInfoStore((state) => state.sound);
+  const isPracticeFinished = usePracticeStateStore(
+    (state) => state.isPracticeFinished,
+  );
+
   const [codeList, setCodeList] = useState([]);
 
-  const handleKeyDown = (event) => {
-    setCodeList((list) => [...list, event.code]);
-  };
+  const handleKeyDown = useCallback(
+    (event) => {
+      if (isPracticeFinished) return;
+      if (sound) {
+        const audio = new Audio(typingSound);
+        audio.play();
+      }
+      setCodeList((list) => [...list, event.code]);
+    },
+    [isPracticeFinished, sound],
+  );
 
-  const handleKeyUp = (event) => {
-    setCodeList((list) => list.filter((code) => code !== event.code));
-  };
+  const handleKeyUp = useCallback(
+    (event) => {
+      if (isPracticeFinished) return;
+      setCodeList((list) => list.filter((code) => code !== event.code));
+    },
+    [isPracticeFinished],
+  );
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -78,7 +97,7 @@ const Keyboard = () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, []);
+  }, [handleKeyDown, handleKeyUp]);
 
   return (
     <div css={keyboardCss}>

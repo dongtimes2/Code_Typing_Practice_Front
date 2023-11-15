@@ -8,14 +8,24 @@ import Layout from './layout/Layout';
 import { queryClient } from '../../api/config/query';
 import Keyboard from '../../components/Keyboard/Keyboard';
 import Modal from '../../components/Modal/Modal';
-import { useNavigationStore, useResultStore } from '../../store';
+import { PATH } from '../../constants/path';
+import {
+  useNavigationStore,
+  usePracticeStateStore,
+  useResultStore,
+} from '../../store';
 
 const Practice = () => {
   const language = useNavigationStore((state) => state.language);
   const type = useNavigationStore((state) => state.type);
   const reset = useResultStore((state) => state.reset);
+  const isPracticeFinished = usePracticeStateStore(
+    (state) => state.isPracticeFinished,
+  );
+  const setIsPracticeFinished = usePracticeStateStore(
+    (state) => state.setIsPracticeFinished,
+  );
 
-  const [isFinished, setIsFinished] = useState(false);
   const [resetSeed, setResetSeed] = useState(0);
 
   const navigate = useNavigate();
@@ -24,17 +34,18 @@ const Practice = () => {
     setResetSeed((prev) => prev + 1);
     queryClient.resetQueries(['practice', language, type]);
     reset();
-    setIsFinished(false);
+    setIsPracticeFinished(false);
   };
 
   const handleGoHomeButtonClick = () => {
     reset();
-    navigate('/');
+    setIsPracticeFinished(false);
+    navigate(PATH.HOME);
   };
 
   useEffect(() => {
     if (!language || !type) {
-      navigate('/error');
+      navigate(PATH.ERROR);
     }
 
     return () => {
@@ -47,17 +58,23 @@ const Practice = () => {
     <Layout>
       <div className="practiceArea">
         {type === 'word' && (
-          <WordPractice setIsFinished={setIsFinished} onReset={resetSeed} />
+          <WordPractice
+            setIsFinished={setIsPracticeFinished}
+            onReset={resetSeed}
+          />
         )}
         {type === 'short' && (
-          <ShortPractice setIsFinished={setIsFinished} onReset={resetSeed} />
+          <ShortPractice
+            setIsFinished={setIsPracticeFinished}
+            onReset={resetSeed}
+          />
         )}
       </div>
       <div className="keyboardArea">
         <Keyboard />
       </div>
 
-      {isFinished && (
+      {isPracticeFinished && (
         <Modal disableBackgroundExit>
           <ResultModal
             type={type}

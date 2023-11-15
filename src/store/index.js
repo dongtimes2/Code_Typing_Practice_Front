@@ -44,3 +44,8 @@ export const useUserInfoStore = create((set) => ({
   reset: () =>
     set({ userNickname: '', userProfileImage: '', isLoggedIn: false }),
 }));
+
+export const usePracticeStateStore = create((set) => ({
+  isPracticeFinished: false,
+  setIsPracticeFinished: (isPracticeFinished) => set({ isPracticeFinished }),
+}));
