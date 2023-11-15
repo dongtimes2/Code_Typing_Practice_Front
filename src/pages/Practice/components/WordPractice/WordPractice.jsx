@@ -14,7 +14,7 @@ import {
 import theme from '../../../../styles/theme';
 import isKoreanInput from '../../../../utils/isKoreanInput';
 
-const practiceCss = css`
+const practiceCss = (props) => css`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,18 +51,22 @@ const practiceCss = css`
     width: 26rem;
     height: 5.75rem;
     padding: 1rem 6rem;
-    background-color: ${theme.colors.white};
-    background-color: ${theme.colors.whiteGray};
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.blackGray};
     border-radius: 1rem;
     font-size: ${theme.fontSizes.xxxxxxl};
     font-weight: ${theme.fontWeights.bold};
 
     .correct {
-      color: #1fbd83;
+      color: ${props.isColorWeakness
+        ? `${theme.colors.correctColorWeakness}`
+        : `${theme.colors.correct}`};
     }
 
     .wrong {
-      color: #ff69b4;
+      color: ${props.isColorWeakness
+        ? `${theme.colors.wrongColorWeakness}`
+        : `${theme.colors.wrong}`};
       text-decoration: underline;
     }
   }
@@ -89,6 +93,7 @@ const WordPractice = ({ setIsFinished, onReset }) => {
   const setTotalAccuracy = useResultStore((state) => state.setTotalAccuracy);
   const setTotalTypoCount = useResultStore((state) => state.setTotalTypoCount);
   const practiceNumber = useUserInfoStore((state) => state.practiceNumber);
+  const isColorWeakness = useUserInfoStore((state) => state.isColorWeakness);
 
   const { data = [] } = useGetPractice(language, type, practiceNumber);
 
@@ -171,7 +176,7 @@ const WordPractice = ({ setIsFinished, onReset }) => {
   }, []);
 
   return (
-    <div css={practiceCss}>
+    <div css={practiceCss({ isColorWeakness })}>
       <div className="statusArea">
         <div>
           <p className="item">정확도</p>

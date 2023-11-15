@@ -16,7 +16,7 @@ import theme from '../../../../styles/theme';
 import isKoreanInput from '../../../../utils/isKoreanInput';
 import { getProgress } from '../WordPractice/utils/getProgress';
 
-const practiceCss = css`
+const practiceCss = (props) => css`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,19 +50,23 @@ const practiceCss = css`
     width: 80%;
     height: 5.75rem;
     padding: 1rem 2rem;
-    background-color: ${theme.colors.white};
-    background-color: ${theme.colors.whiteGray};
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.blackGray};
     border-radius: 1rem;
     font-size: ${theme.fontSizes.xxxxxxl};
     font-weight: ${theme.fontWeights.semibold};
 
     .correct {
-      color: #1fbd83;
+      color: ${props.isColorWeakness
+        ? `${theme.colors.correctColorWeakness}`
+        : `${theme.colors.correct}`};
       text-decoration: underline;
     }
 
     .wrong {
-      color: #ff69b4;
+      color: ${props.isColorWeakness
+        ? `${theme.colors.wrongColorWeakness}`
+        : `${theme.colors.wrong}`};
       text-decoration: underline;
     }
   }
@@ -109,6 +113,7 @@ const ShortPractice = ({ setIsFinished, onReset }) => {
     (state) => state.setTotalTypingSpeed,
   );
   const practiceNumber = useUserInfoStore((state) => state.practiceNumber);
+  const isColorWeakness = useUserInfoStore((state) => state.isColorWeakness);
 
   const { data = [] } = useGetPractice(language, type, practiceNumber);
 
@@ -210,7 +215,7 @@ const ShortPractice = ({ setIsFinished, onReset }) => {
   }, []);
 
   return (
-    <div css={practiceCss}>
+    <div css={practiceCss({ isColorWeakness })}>
       <div className="statusArea">
         <div>
           <p className="item">현재 타수:</p>

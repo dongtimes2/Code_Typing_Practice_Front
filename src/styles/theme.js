@@ -9,6 +9,11 @@ const colors = {
   gray: '#49515D',
   lightGray: '#C5C5C5',
   whiteGray: '#EBEBEB',
+  blackGray: '#303030',
+  correct: '#2DFF61',
+  correctColorWeakness: '#00D6FF',
+  wrong: '#FF9AFF',
+  wrongColorWeakness: '#FFC919',
 };
 
 const fontSizes = {
