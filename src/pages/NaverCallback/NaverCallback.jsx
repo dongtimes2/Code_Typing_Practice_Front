@@ -21,6 +21,13 @@ const NaverCallback = () => {
   const setUserProfileImage = useUserInfoStore(
     (state) => state.setUserProfileImage,
   );
+  const setPracticeNumber = useUserInfoStore(
+    (state) => state.setPracticeNumber,
+  );
+  const setSound = useUserInfoStore((state) => state.setSound);
+  const setIsColorWeakness = useUserInfoStore(
+    (store) => store.setIsColorWeakness,
+  );
 
   const { mutate, isError } = useMutation({
     mutationFn: postNaverLogin,
@@ -28,6 +35,9 @@ const NaverCallback = () => {
       tokenController.setAccessToken(response.accessToken);
       setUserNickname(response.nickname);
       setUserProfileImage(response.profileImage);
+      setPracticeNumber(response.practiceNumber);
+      setSound(response.sound);
+      setIsColorWeakness(response.isColorWeakness);
       setIsLoggedIn(true);
       navigate(PATH.HOME);
     },

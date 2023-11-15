@@ -55,28 +55,19 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const handleLogoClick = () => {
-    navigate(PATH.HOME);
-  };
-
-  const handleLoginButtonClick = () => {
-    navigate(PATH.LOGIN);
-  };
-
-  const handleLogoutButtonClick = () => {
-    mutate();
-  };
-
   return (
     <header css={headerCss}>
-      <div className="logoArea" onClick={handleLogoClick}>
+      <div className="logoArea" onClick={() => navigate(PATH.HOME)}>
         <span>Code Typing Practice</span>
       </div>
       <div css={authAreaCss}>
         {isLoggedIn ? (
-          <span onClick={handleLogoutButtonClick}>로그아웃</span>
+          <>
+            <span onClick={() => navigate(PATH.SETTINGS)}>설정</span>
+            <span onClick={() => mutate()}>로그아웃</span>
+          </>
         ) : (
-          <span onClick={handleLoginButtonClick}>로그인</span>
+          <span onClick={() => navigate(PATH.LOGIN)}>로그인</span>
         )}
       </div>
     </header>

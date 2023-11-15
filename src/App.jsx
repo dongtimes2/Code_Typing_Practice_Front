@@ -7,12 +7,14 @@ import Login from './pages/Login/Login';
 import NaverCallback from './pages/NaverCallback/NaverCallback';
 import NotFound from './pages/NotFound/NotFound';
 import Practice from './pages/Practice/Practice';
+import Settings from './pages/Settings/Settings';
 
 const App = () => {
   return (
     <Layout>
       <Routes>
         <Route path={PATH.HOME} element={<Home />} />
+        <Route path={PATH.SETTINGS} element={<Settings />} />
         <Route path={PATH.PRACTICE} element={<Practice />} />
         <Route path={PATH.LOGIN} element={<Login />} />
         <Route path={PATH.ERROR} element={<NotFound />} />

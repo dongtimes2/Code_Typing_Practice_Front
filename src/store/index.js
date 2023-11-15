@@ -32,9 +32,15 @@ export const useUserInfoStore = create((set) => ({
   isLoggedIn: false,
   userNickname: '',
   userProfileImage: '',
+  practiceNumber: 10,
+  sound: false,
+  isColorWeakness: false,
   setIsLoggedIn: (isLoggedIn) => set({ isLoggedIn }),
   setUserNickname: (userNickname) => set({ userNickname }),
   setUserProfileImage: (userProfileImage) => set({ userProfileImage }),
+  setPracticeNumber: (practiceNumber) => set({ practiceNumber }),
+  setSound: (sound) => set({ sound }),
+  setIsColorWeakness: (isColorWeakness) => set({ isColorWeakness }),
   reset: () =>
     set({ userNickname: '', userProfileImage: '', isLoggedIn: false }),
 }));
