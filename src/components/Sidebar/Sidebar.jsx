@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
-import { useState } from 'react';
 
 import defaultUserImage from '../../assets/images/user.png';
+import { useUserInfoStore } from '../../store';
 import theme from '../../styles/theme';
 
 const sidebarCss = css`
@@ -35,15 +35,25 @@ const userInfoCss = css`
   }
 `;
 
-// 닉네임 최대 길이 6자로 지정하기
 const Sidebar = () => {
-  const [isloggedIn, setIsLoggedIn] = useState(false);
+  const isLoggedin = useUserInfoStore((state) => state.isLoggedIn);
+  const userNickname = useUserInfoStore((state) => state.userNickname);
+  const userProfileImage = useUserInfoStore((state) => state.userProfileImage);
 
   return (
     <div css={sidebarCss}>
       <div css={userInfoCss}>
-        <img src={defaultUserImage} alt="user profile image" />
-        {isloggedIn ? <p>ABCDEF 님 환영합니다</p> : <p>로그인 해주십시오</p>}
+        {isLoggedin ? (
+          <>
+            <img src={userProfileImage} alt="user profile image" />
+            <p>{userNickname.substr(0, 5)} 님 환영합니다</p>
+          </>
+        ) : (
+          <>
+            <img src={defaultUserImage} alt="default image" />
+            <p>로그인 해주십시오</p>
+          </>
+        )}
       </div>
     </div>
   );

@@ -27,3 +27,14 @@ export const useResultStore = create((set) => ({
       totalTypingSpeed: 0,
     }),
 }));
+
+export const useUserInfoStore = create((set) => ({
+  isLoggedIn: false,
+  userNickname: '',
+  userProfileImage: '',
+  setIsLoggedIn: (isLoggedIn) => set({ isLoggedIn }),
+  setUserNickname: (userNickname) => set({ userNickname }),
+  setUserProfileImage: (userProfileImage) => set({ userProfileImage }),
+  reset: () =>
+    set({ userNickname: '', userProfileImage: '', isLoggedIn: false }),
+}));
