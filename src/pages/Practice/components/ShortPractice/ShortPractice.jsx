@@ -7,9 +7,14 @@ import { getCharacterClass } from './utils/getCharacterClass';
 import { getTotalTypingSpeed } from './utils/getTypingSpeed';
 import { useGetPractice } from '../../../../api/practice';
 import { FORBIDDEN_KEY_DATA } from '../../../../constants/key';
-import { useNavigationStore, useResultStore } from '../../../../store';
+import {
+  useNavigationStore,
+  useResultStore,
+  useUserInfoStore,
+} from '../../../../store';
 import theme from '../../../../styles/theme';
 import isKoreanInput from '../../../../utils/isKoreanInput';
+import { getProgress } from '../WordPractice/utils/getProgress';
 
 const practiceCss = css`
   display: flex;
@@ -103,8 +108,9 @@ const ShortPractice = ({ setIsFinished, onReset }) => {
   const setTotalTypingSpeed = useResultStore(
     (state) => state.setTotalTypingSpeed,
   );
+  const practiceNumber = useUserInfoStore((state) => state.practiceNumber);
 
-  const { data = [] } = useGetPractice(language, type, 10);
+  const { data = [] } = useGetPractice(language, type, practiceNumber);
 
   const inputRef = useRef(null);
   const allowChangeEvent = useRef(true);
@@ -195,6 +201,7 @@ const ShortPractice = ({ setIsFinished, onReset }) => {
   }, [targetText, userInput, targetInsert, userInputInsert]);
 
   useEffect(() => {
+    setProgress(getProgress(index, data.length));
     setTargetText(data[index]?.content ?? '');
   }, [index, data]);
 

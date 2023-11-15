@@ -6,7 +6,11 @@ import { getCharacterClass } from './utils/getCharacterClass';
 import { getProgress } from './utils/getProgress';
 import { useGetPractice } from '../../../../api/practice';
 import { FORBIDDEN_KEY_DATA } from '../../../../constants/key';
-import { useNavigationStore, useResultStore } from '../../../../store';
+import {
+  useNavigationStore,
+  useResultStore,
+  useUserInfoStore,
+} from '../../../../store';
 import theme from '../../../../styles/theme';
 import isKoreanInput from '../../../../utils/isKoreanInput';
 
@@ -84,8 +88,9 @@ const WordPractice = ({ setIsFinished, onReset }) => {
   const type = useNavigationStore((state) => state.type);
   const setTotalAccuracy = useResultStore((state) => state.setTotalAccuracy);
   const setTotalTypoCount = useResultStore((state) => state.setTotalTypoCount);
+  const practiceNumber = useUserInfoStore((state) => state.practiceNumber);
 
-  const { data = [] } = useGetPractice(language, type, 10);
+  const { data = [] } = useGetPractice(language, type, practiceNumber);
 
   const inputRef = useRef(null);
   const allowChangeEvent = useRef(true);
@@ -149,7 +154,6 @@ const WordPractice = ({ setIsFinished, onReset }) => {
 
   useEffect(() => {
     setAccuracy(getAccuracy(index - typoCount, index));
-    setProgress(getProgress(index, data.length));
 
     if (index === data.length) {
       setTotalAccuracy(getAccuracy(index - typoCount, index));
@@ -158,6 +162,7 @@ const WordPractice = ({ setIsFinished, onReset }) => {
   }, [typoCount, index, data, setTotalAccuracy, setTotalTypoCount]);
 
   useEffect(() => {
+    setProgress(getProgress(index, data.length));
     setTargetText(data[index]?.content ?? '');
   }, [index, data]);
 
