@@ -103,7 +103,7 @@ const practiceCss = (props) => css`
   }
 `;
 
-const ShortPractice = ({ setIsFinished, onReset }) => {
+const SentencePractice = ({ setIsFinished, onReset }) => {
   const language = useNavigationStore((state) => state.language);
   const type = useNavigationStore((state) => state.type);
   const totalAccuracy = useResultStore((state) => state.totalAccuracy);
@@ -266,4 +266,4 @@ const ShortPractice = ({ setIsFinished, onReset }) => {
   );
 };
 
-export default ShortPractice;
+export default SentencePractice;

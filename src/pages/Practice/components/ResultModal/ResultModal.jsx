@@ -46,7 +46,7 @@ const ResultModal = ({ type, onReplayButtonClick, onGoHomeButtonClick }) => {
       <div className="dataArea">
         <p>정확도: {totalAccuracy}%</p>
         {type === 'word' && <p>오타수: {totalTypoCount}개</p>}
-        {type === 'short' && <p>평균 타수: {totalTypingSpeed}타</p>}
+        {type === 'sentence' && <p>평균 타수: {totalTypingSpeed}타</p>}
       </div>
       <div className="buttonArea">
         <Button onClick={onReplayButtonClick}>다시 연습하기</Button>

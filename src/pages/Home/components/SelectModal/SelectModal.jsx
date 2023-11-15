@@ -47,8 +47,7 @@ const SelectModal = ({ onTypeSelect }) => {
       <p id="title">연습 종류를 선택하세요</p>
       <div className="buttonArea">
         <Button onClick={() => handleButtonClick('word')}>낱말 연습</Button>
-        <Button onClick={() => handleButtonClick('short')}>짧은 글 연습</Button>
-        <Button onClick={() => handleButtonClick('long')}>긴 글 연습</Button>
+        <Button onClick={() => handleButtonClick('sentence')}>문장 연습</Button>
       </div>
     </div>
   );

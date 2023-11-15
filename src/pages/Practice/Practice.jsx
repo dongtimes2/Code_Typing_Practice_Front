@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ResultModal from './components/ResultModal/ResultModal';
-import ShortPractice from './components/ShortPractice/ShortPractice';
+import SentencePractice from './components/SentencePractice/SentencePractice';
 import WordPractice from './components/WordPractice/WordPractice';
 import Layout from './layout/Layout';
 import { queryClient } from '../../api/config/query';
@@ -63,8 +63,8 @@ const Practice = () => {
             onReset={resetSeed}
           />
         )}
-        {type === 'short' && (
-          <ShortPractice
+        {type === 'sentence' && (
+          <SentencePractice
             setIsFinished={setIsPracticeFinished}
             onReset={resetSeed}
           />
