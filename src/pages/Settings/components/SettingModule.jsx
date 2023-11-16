@@ -8,17 +8,18 @@ import theme from '../../../styles/theme';
 
 const moduleCss = css`
   width: 100%;
-  height: 100%;
-  padding: 2rem;
+  height: 1px;
+  min-height: 18.75rem;
 
   .settingArea {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
     width: 100%;
+    height: 100%;
     border: 1px solid black;
     padding: 1rem;
+
     p {
       font-size: ${theme.fontSizes.xl};
       font-weight: ${theme.fontWeights.bold};
@@ -28,6 +29,10 @@ const moduleCss = css`
   .radioArea {
     display: flex;
     gap: 0.75rem;
+  }
+
+  .buttonArea {
+    width: 30%;
   }
 `;
 
@@ -142,7 +147,9 @@ const SettingModule = () => {
             </div>
           </div>
         </div>
-        <Button onClick={handleSaveButtonClick}>저장하기</Button>
+        <div className="buttonArea">
+          <Button onClick={handleSaveButtonClick}>저장하기</Button>
+        </div>
       </div>
     </div>
   );
