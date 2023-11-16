@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
 import defaultUserImage from '../../assets/images/user.png';
+import useAuth from '../../hooks/useAuth';
 import { useUserInfoStore } from '../../store';
 import theme from '../../styles/theme';
 
@@ -36,9 +37,10 @@ const userInfoCss = css`
 `;
 
 const Sidebar = () => {
-  const isLoggedin = useUserInfoStore((state) => state.isLoggedIn);
   const userNickname = useUserInfoStore((state) => state.userNickname);
   const userProfileImage = useUserInfoStore((state) => state.userProfileImage);
+
+  const { isLoggedin } = useAuth();
 
   return (
     <div css={sidebarCss}>

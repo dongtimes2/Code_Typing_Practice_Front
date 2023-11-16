@@ -29,20 +29,19 @@ export const useResultStore = create((set) => ({
 }));
 
 export const useUserInfoStore = create((set) => ({
-  isLoggedIn: false,
+  isLoggedin: false,
   userNickname: '',
   userProfileImage: '',
   practiceNumber: 10,
   sound: false,
   isColorWeakness: false,
-  setIsLoggedIn: (isLoggedIn) => set({ isLoggedIn }),
+  setIsLoggedin: (isLoggedin) => set({ isLoggedin }),
   setUserNickname: (userNickname) => set({ userNickname }),
   setUserProfileImage: (userProfileImage) => set({ userProfileImage }),
   setPracticeNumber: (practiceNumber) => set({ practiceNumber }),
   setSound: (sound) => set({ sound }),
   setIsColorWeakness: (isColorWeakness) => set({ isColorWeakness }),
-  reset: () =>
-    set({ userNickname: '', userProfileImage: '', isLoggedIn: false }),
+  reset: () => set({ userNickname: '', userProfileImage: '' }),
 }));
 
 export const usePracticeStateStore = create((set) => ({

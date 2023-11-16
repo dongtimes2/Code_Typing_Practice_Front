@@ -9,12 +9,13 @@ import Layout from './layout/Layout';
 import { useGetLanguages } from '../../api/languages';
 import Modal from '../../components/Modal/Modal';
 import { PATH } from '../../constants/path';
-import { useNavigationStore, useUserInfoStore } from '../../store';
+import useAuth from '../../hooks/useAuth';
+import { useNavigationStore } from '../../store';
 
 const Home = () => {
   const setLanguage = useNavigationStore((state) => state.setLanguage);
   const setType = useNavigationStore((state) => state.setType);
-  const isLoggedIn = useUserInfoStore((state) => state.isLoggedIn);
+  const { isLoggedin } = useAuth();
 
   const { data } = useGetLanguages();
 
@@ -23,7 +24,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleStartButtonClick = (id) => {
-    if (isLoggedIn) {
+    if (isLoggedin) {
       setShowModal(true);
       setLanguage(id);
     } else {
@@ -51,9 +52,10 @@ const Home = () => {
             />
           ))}
       </div>
+
       {showModal && (
         <Modal setShowModal={setShowModal}>
-          {isLoggedIn ? (
+          {isLoggedin ? (
             <SelectModal onTypeSelect={handleTypeSelectButtonClick} />
           ) : (
             <LoginModal />

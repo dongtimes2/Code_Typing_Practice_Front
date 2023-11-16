@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { postLogout } from '../../api/logout';
 import { HEADER_HEIGHT } from '../../constants/layout';
 import { PATH } from '../../constants/path';
+import useAuth from '../../hooks/useAuth';
 import { useUserInfoStore } from '../../store';
 import theme from '../../styles/theme';
-import { TokenController } from '../../utils/tokenController';
 
 const headerCss = css`
   position: fixed;
@@ -40,16 +40,15 @@ const authAreaCss = css`
 `;
 
 const Header = () => {
-  const tokenController = new TokenController();
-
-  const isLoggedIn = useUserInfoStore((state) => state.isLoggedIn);
   const reset = useUserInfoStore((state) => state.reset);
+
+  const { isLoggedin, logout } = useAuth();
 
   const { mutate } = useMutation({
     mutationFn: postLogout,
     onSettled: () => {
       reset();
-      tokenController.clear();
+      logout();
     },
   });
 
@@ -61,7 +60,7 @@ const Header = () => {
         <span>Code Typing Practice</span>
       </div>
       <div css={authAreaCss}>
-        {isLoggedIn ? (
+        {isLoggedin ? (
           <>
             <span onClick={() => navigate(PATH.SETTINGS)}>설정</span>
             <span onClick={() => mutate()}>로그아웃</span>

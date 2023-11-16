@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { postNaverLogin } from '../../api/login';
 import Button from '../../components/Button/Button';
 import { PATH } from '../../constants/path';
+import useAuth from '../../hooks/useAuth';
 import { useUserInfoStore } from '../../store';
 import { TokenController } from '../../utils/tokenController';
 
@@ -16,7 +17,6 @@ const NaverCallback = () => {
   const params = new URLSearchParams(location.search);
   const code = params.get('code');
 
-  const setIsLoggedIn = useUserInfoStore((state) => state.setIsLoggedIn);
   const setUserNickname = useUserInfoStore((state) => state.setUserNickname);
   const setUserProfileImage = useUserInfoStore(
     (state) => state.setUserProfileImage,
@@ -29,6 +29,8 @@ const NaverCallback = () => {
     (store) => store.setIsColorWeakness,
   );
 
+  const { setIsLoggedin } = useAuth();
+
   const { mutate, isError } = useMutation({
     mutationFn: postNaverLogin,
     onSuccess: (response) => {
@@ -38,7 +40,7 @@ const NaverCallback = () => {
       setPracticeNumber(response.practiceNumber);
       setSound(response.sound);
       setIsColorWeakness(response.isColorWeakness);
-      setIsLoggedIn(true);
+      setIsLoggedin(true);
       navigate(PATH.HOME);
     },
     onError: (error) => {
