@@ -51,14 +51,19 @@ const recordCss = (props) => css`
 
 const RecordModule = () => {
   const { data } = useGetRecord();
-  const { data: stat } = useGetRecordStatistics();
+  const { data: stat, isSuccess: isStatSuccess } = useGetRecordStatistics();
 
   return (
     <div css={moduleCss}>
       <p className="title">통계</p>
       <div className="statisticsArea">
-        <p>평균 정확도: {stat[0]?.accuracy ?? 0}%</p>
-        <p>평균 타수: {stat[0]?.typingSpeed ?? 0}타</p>
+        <p>
+          평균 정확도: {isStatSuccess ? `${stat[0].accuracy}%` : '불러오는 중'}
+        </p>
+        <p>
+          평균 타수:{' '}
+          {isStatSuccess ? `${stat[0].typingSpeed}타` : '불러오는 중'}
+        </p>
       </div>
       <hr className="hr" />
       <p className="title">최근 기록</p>
