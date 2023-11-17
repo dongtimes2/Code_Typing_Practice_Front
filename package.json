@@ -2,16 +2,21 @@
   "name": "code_typing_practice_front",
   "version": "0.1.0",
   "private": true,
+  "main": "./electron/electron.js",
+  "author": "dongtimes2",
+  "description": "code typing practice web application",
   "scripts": {
-    "start": "NODE_ENV=production vite",
-    "dev": "NODE_ENV=development vite",
-    "build": "NODE_ENV=production vite build",
-    "preview": "NODE_ENV=production vite preview",
+    "dev": "cross-env NODE_ENV=development vite",
+    "dev:e": "concurrently \"cross-env VITE_ELECTRON=true BROWSER=none npm run dev\" \"ELECTRON_DISABLE_SECURITY_WARNINGS=true electron .\"",
+    "build": "cross-env NODE_ENV=production vite build",
+    "build:e": "cross-env VITE_ELECTRON=true npm run build && electron-builder",
+    "preview": "cross-env NODE_ENV=production vite preview --port 3000",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint .",
     "prettier": "prettier .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rimraf ./build ./dist"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -19,7 +24,6 @@
     "@tanstack/react-query": "^5.8.1",
     "axios": "^1.6.0",
     "dayjs": "^1.11.10",
-    "dotenv": "^16.3.1",
     "electron-is-dev": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -38,8 +42,9 @@
     "@testing-library/user-event": "^14.5.1",
     "@vitejs/plugin-react-swc": "^3.4.1",
     "@vitest/coverage-v8": "^0.34.6",
+    "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
-    "electron": "^27.0.3",
+    "electron": "^27.1.0",
     "electron-builder": "^24.6.4",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
@@ -53,10 +58,22 @@
     "jsdom": "^22.1.0",
     "msw": "^2.0.4",
     "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
     "vite": "^4.5.0",
     "vitest": "^0.34.6"
   },
   "msw": {
     "workerDirectory": "public"
+  },
+  "build": {
+    "files": [
+      "./build/**/*",
+      "./electron/electron.js",
+      "./electron/preload.js"
+    ],
+    "directories": {
+      "buildResources": "./build",
+      "output": "./dist"
+    }
   }
 }
