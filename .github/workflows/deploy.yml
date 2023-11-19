@@ -2,7 +2,12 @@ name: AWS S3 Cloudfront CI/CD
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - 'main'
+    paths-ignore:
+      - '.vscode/**'
+      - 'README.md'
+      - 'public/**'
 
 jobs:
   build:
