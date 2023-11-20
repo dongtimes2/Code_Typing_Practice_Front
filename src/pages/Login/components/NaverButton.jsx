@@ -11,7 +11,7 @@ const buttonCss = css`
 
 const NaverButton = () => {
   const isElectorn = import.meta.env.VITE_ELECTRON === 'true';
-  const link = `https://nid.naver.com/oauth2.0/authorize?display=popup&response_type=code&client_id=${
+  const link = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${
     import.meta.env.VITE_NAVER_LOGIN_CLIENT_ID
   }&redirect_uri=${import.meta.env.VITE_NAVER_LOGIN_CALLBACK_URL}&state=${
     import.meta.env.VITE_NAVER_LOGIN_STATE
