@@ -58,11 +58,16 @@ const RecordModule = () => {
       <p className="title">통계</p>
       <div className="statisticsArea">
         <p>
-          평균 정확도: {isStatSuccess ? `${stat[0].accuracy}%` : '불러오는 중'}
+          평균 정확도:{' '}
+          {isStatSuccess
+            ? `${stat[0]?.accuracy?.toFixed(0) ?? 0}%`
+            : '불러오는 중'}
         </p>
         <p>
           평균 타수:{' '}
-          {isStatSuccess ? `${stat[0].typingSpeed}타` : '불러오는 중'}
+          {isStatSuccess
+            ? `${stat[0]?.typingSpeed?.toFixed(0) ?? 0}타`
+            : '불러오는 중'}
         </p>
       </div>
       <hr className="hr" />
