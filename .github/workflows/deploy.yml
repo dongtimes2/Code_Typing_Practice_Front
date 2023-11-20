@@ -1,4 +1,4 @@
-name: AWS S3 Cloudfront CI/CD
+name: AWS DEPLOY
 
 on:
   push:
@@ -19,6 +19,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.17.1
+
+      - name: .env Setting
+        run: |
+          echo "VITE_SERVER_URL=${{ secrets.VITE_SERVER_URL }}" >> .env
+          echo "VITE_NAVER_LOGIN_CLIENT_ID=${{ secrets.VITE_NAVER_LOGIN_CLIENT_ID }}" >> .env
+          echo "VITE_NAVER_LOGIN_CALLBACK_URL=${{ secrets.VITE_NAVER_LOGIN_CALLBACK_URL }}" >> .env
+          echo "VITE_NAVER_LOGIN_STATE=${{ secrets.VITE_NAVER_LOGIN_STATE }}" >> .env
 
       - name: Install modules
         run: npm install
