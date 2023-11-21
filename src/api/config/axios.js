@@ -18,6 +18,12 @@ export const request = async (params) => {
 const handleAxiosError = async (error) => {
   const { config, response } = error;
 
+  if (response.status === 401 && response.data.message === 'Invalid Token') {
+    useUserInfoStore.getState().reset();
+    tokenController.clear();
+    window.location.href = '/';
+  }
+
   if (response.status === 401 && response.data.message === 'Token Expired') {
     try {
       const { accessToken } = await request({
