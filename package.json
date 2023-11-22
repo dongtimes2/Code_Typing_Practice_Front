@@ -66,6 +66,7 @@
     "workerDirectory": "public"
   },
   "build": {
+    "productName": "code-typing-practice",
     "files": [
       "./build/**/*",
       "./electron/electron.js",
@@ -74,6 +75,9 @@
     "directories": {
       "buildResources": "./build",
       "output": "./dist"
+    },
+    "mac": {
+      "icon": "./src/assets/icons/1024x1024.png"
     }
   }
 }
