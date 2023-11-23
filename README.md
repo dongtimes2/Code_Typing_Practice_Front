@@ -27,12 +27,12 @@
 ### 로그인
 |메인 화면|로그인 화면|
 |:---:|:---:|
-|![main](https://github.com/dongtimes2/LeetCode/assets/98700888/09b455e3-0dc7-4e8f-9afb-e87da5c5d87e)|![login](https://github.com/dongtimes2/LeetCode/assets/98700888/b3d2017b-17f2-4c4a-b8d2-dc7bbc15c7b3)|
+|![main](https://github.com/dongtimes2/readme_image/assets/98700888/7e9af24d-d384-473a-b70a-92ed6482a83f)|![login](https://github.com/dongtimes2/readme_image/assets/98700888/b4372cda-cafc-4c2c-832f-000942d086ac)|
 |헤더 우측의 로그인 버튼을 클릭하면 로그인 페이지로 이동합니다|네이버 로그인을 할 수 있습니다|
 
 |로그인이 완료된 이후||
 |:---:|:---:|
-|![login_success](https://github.com/dongtimes2/LeetCode/assets/98700888/dedd2b17-4c5f-4788-a7f8-04393203a68f)|![blank](https://github.com/dongtimes2/LeetCode/assets/98700888/d7e8db65-e37a-43df-b665-fc6416020145)|
+|![login_success](https://github.com/dongtimes2/readme_image/assets/98700888/56143eca-54d8-42db-b386-efd3ad98f44c)|![blank](https://github.com/dongtimes2/readme_image/assets/98700888/3e8f75bb-2799-43f7-b6c9-ddf144b88d0f)|
 |로그인이 완료되면 다시 메인 페이지로 리다이렉트됩니다<br>네이버 계정의 닉네임과 프로필 사진이 우측 바에 표시됩니다|&nbsp;&nbsp;&nbsp;&nbsp;|
 
 <br>
@@ -41,7 +41,7 @@
 
 |메인 화면|연습모드 선택 모달|
 |:---:|:---:|
-|![cards](https://github.com/dongtimes2/LeetCode/assets/98700888/d39970a9-4250-4593-8380-22bdd24c516d)|![practice_type](https://github.com/dongtimes2/LeetCode/assets/98700888/645b6aa6-3f1c-4fb4-a724-4da609fca388)|
+|![cards](https://github.com/dongtimes2/readme_image/assets/98700888/56143eca-54d8-42db-b386-efd3ad98f44c)|![practice_type](https://github.com/dongtimes2/readme_image/assets/98700888/f7507f8d-2625-4094-a06f-fc98933f76df)|
 |메인 화면에는 각 프로그래밍 언어의 로고와 설명이 담긴 카드가 여러 개 표시됩니다|시작하기 버튼을 클릭하면 연습 종류를 선택할 수 있는 모달이 표시됩니다<br>연습 버튼을 클릭할 경우 연습 페이지로 이동합니다|
 
 <br>
@@ -50,7 +50,7 @@
 
 |낱말 연습 화면|연습 결과 화면|
 |:--:|:--:|
-|![word](https://github.com/dongtimes2/LeetCode/assets/98700888/11509923-321f-4e86-814e-0758c547c14e)|![word_result](https://github.com/dongtimes2/LeetCode/assets/98700888/f0d48356-28cc-478e-be89-34e58731da16)|
+|![word](https://github.com/dongtimes2/readme_image/assets/98700888/cfa6f467-8a2e-47f8-b485-0f586cf98f1b)|![word_result](https://github.com/dongtimes2/readme_image/assets/98700888/3c7471ec-9940-470e-bcaf-446090d68d4e)|
 |프로그래밍 언어가 사용하는 키워드로 낱말 연습 문제가 구성됩니다<br>화면 상단에는 '정확도', '오타수', '진행도'가 표시되며, 하단에는 문제와 유저가 입력한 텍스트가 표시됩니다<br>옳게 입력했는지, 혹은 틀리게 입력했는지에 따라 유저가 입력한 텍스트의 색상이 다르게 표시됩니다|모든 연습을 마쳤을 경우 연습 결과 모달이 나타납니다<br>|
 
 <br>
@@ -59,7 +59,7 @@
 
 |문장 연습 화면|문장 연습 결과|
 |:--:|:--:|
-|![sentence](https://github.com/dongtimes2/LeetCode/assets/98700888/a5d98a3d-3639-4aa6-a443-b20457234d99)|![sentence_result](https://github.com/dongtimes2/LeetCode/assets/98700888/dacfa881-10ab-447d-86de-36822d97ed51)|
+|![sentence](https://github.com/dongtimes2/readme_image/assets/98700888/c2971a1a-8083-4121-9db0-27518b77d967)|![sentence_result](https://github.com/dongtimes2/readme_image/assets/98700888/eb3ead1f-7462-40af-8a92-8ca217833ec2)|
 |프로그래밍 언어 코드 한 줄로 문장 연습 문제가 구성됩니다<br>화면 상단에는 '현재 타수', '평균 타수', '현재 정확도', '누적 정확도', '진행도'가 표시되며, <br>하단에는 문제와 유저가 입력한 텍스트가 표시됩니다<br>옳게 입력했는지, 혹은 틀리게 입력했는지에 따라 유저가 입력한 텍스트의 색상이 다르게 표시됩니다|모든 연습을 마쳤을 경우 연습 결과 모달이 나타납니다|
 
 <br>
@@ -68,7 +68,7 @@
 
 |메인 화면|설정 화면|
 |:--:|:--:|
-|![main](https://github.com/dongtimes2/LeetCode/assets/98700888/dedd2b17-4c5f-4788-a7f8-04393203a68f)|![settings](https://github.com/dongtimes2/LeetCode/assets/98700888/1d696616-dad6-48d9-968f-9027c64dbdfe)|
+|![main](https://github.com/dongtimes2/readme_image/assets/98700888/56143eca-54d8-42db-b386-efd3ad98f44c)|![settings](https://github.com/dongtimes2/readme_image/assets/98700888/e55603c6-57a3-42f0-85dd-df6080770264)|
 |로그인했을 경우 헤더 우측에 '설정' 버튼이 표시됩니다<br>설정 버튼을 누를 경우 설정 화면으로 이동합니다|설정 화면에서는 환경 설정을 할 수 있고, 유저의 연습 기록도 열람할 수 있습니다<br>'풀 연습문제 개수', '효과음', '색약 모드' 여부를 설정할 수 있고,<br>'최근 20개 연습 결과 기록', '평균 정확도' 및 '평균 타수' 기록을 확인할 수 있습니다|
 
 ## 기술 스택
@@ -146,7 +146,7 @@ $`CurrentTypingSpeed = \frac{CorrectWordCount}{Seconds} \times 60 - BackspaceCou
 
 |기존|Web worker 도입 이후|
 |:--:|:--:|
-|![before](https://github.com/dongtimes2/LeetCode/assets/98700888/3dee4b7b-de38-47c2-8dfd-254dc081219c)|![after](https://github.com/dongtimes2/LeetCode/assets/98700888/02254c71-358d-43a9-ab2c-90ead3cd4d39)|
+|![before](https://github.com/dongtimes2/readme_image/assets/98700888/73cc503a-dd52-4056-a1b4-fe5378c939a6)|![after](https://github.com/dongtimes2/readme_image/assets/98700888/23fc22df-d727-499c-abeb-c09f82e9f0d2)|
 
 <br>
 
@@ -169,7 +169,7 @@ input이 발생했을 때 이벤트 동작이 onKeyDown -> onChange -> onKeyUp �
 boolean값을 저장하는 useRef 변수를 하나 생성한 뒤, onKeyDown 이벤트 함수 내부에서 입력값이 올바른지의 여부를 판정하여 변수에 결과를 저장합니다.  
 이후 onChange 이벤트로 넘어갔을 때, 변수에 저장된 값이 참일 경우에만 onChange 이벤트 로직이 실행되어 input value가 바뀌도록 구현하였습니다.  
 
-![input_evnet](https://github.com/dongtimes2/LeetCode/assets/98700888/79cd78b6-832d-4969-b5d8-e175f69e47f5)
+![input_evnet](https://github.com/dongtimes2/readme_image/assets/98700888/8ddc049d-bce5-421a-b2da-c6e2c8da7292)
 
 <br>
 
@@ -183,7 +183,7 @@ boolean값을 저장하는 useRef 변수를 하나 생성한 뒤, onKeyDown 이�
 
 #### 동작 과정
 
-![diagram](https://github.com/dongtimes2/LeetCode/assets/98700888/b0edca82-10e9-4275-b07c-574b29070f51)
+![diagram](https://github.com/dongtimes2/readme_image/assets/98700888/45c05e60-bfa2-43ea-a971-424edfa18711)
 
 #### token을 이용한 보안
 
@@ -256,7 +256,7 @@ const useAuth = () => {
 
 |일반 모드|색약 모드|
 |:--:|:--:|
-|![normal](https://github.com/dongtimes2/LeetCode/assets/98700888/4802ead8-6429-49ce-bad8-5e0eab44e777)|![color_weakness](https://github.com/dongtimes2/LeetCode/assets/98700888/a95f0a25-01a2-4904-b654-61b16f058642)|
+|![normal](https://github.com/dongtimes2/readme_image/assets/98700888/debeb674-9960-4970-99f8-bd7658838c37)|![color_weakness](https://github.com/dongtimes2/readme_image/assets/98700888/207e9d64-12a4-4381-8729-57e2a186f4e0)|
 
 &nbsp;  
 또한 리뉴얼을 거치며 WCAG(웹 접근성 가이드라인)에 맞추어 어플리케이션의 디자인을 교체하였습니다.  
@@ -264,9 +264,9 @@ const useAuth = () => {
 
 |기존 디자인|&nbsp;&nbsp;&nbsp;&nbsp;새로운 디자인|
 |:--:|:--:|
-|![old](https://github.com/dongtimes2/LeetCode/assets/98700888/64b17d6d-d353-408b-8657-ad48eb638575)|![new](https://github.com/dongtimes2/LeetCode/assets/98700888/f7072422-d15d-4ce6-89da-852f7d20ca48)|
+|![old](https://github.com/dongtimes2/readme_image/assets/98700888/cd9744b6-6e85-4f80-93be-46abe16c82c2)|![new](https://github.com/dongtimes2/readme_image/assets/98700888/cc588390-4736-4a5b-8f33-5ed23454195f)|
 |흰 배경과 연두색 글자의 명암비가 2.42:1로<br>WCAG 2.1 AAA 레벨을 만족시키지 않는다|어두운 배경과 연두색 글자의 명암비가 9.8:1로<br>WCAG 2.1 AAA 레벨을 만족한다|
-|![old](https://github.com/dongtimes2/LeetCode/assets/98700888/defd3635-8bbe-4cd4-adce-32a70eeabd1c)|![new](https://github.com/dongtimes2/LeetCode/assets/98700888/1e57bf2e-11eb-417d-befe-246dd59c3270)|
+|![old](https://github.com/dongtimes2/readme_image/assets/98700888/dff51453-0b10-4b47-9d86-55a6e955ee71)|![new](https://github.com/dongtimes2/readme_image/assets/98700888/ba2459de-3a3d-49c3-bd99-de5a4a611b83)|
 |배경색, 키보드 배경색, 키보드 버튼색의 색상 차이가 모호하여<br>색맹 유저는 색을 구분하는 것이 힘들다|색상 차이가 분명하여<br>색맹 유저도 색의 차이를 구분할 수 있다|
 
 <br>
@@ -290,7 +290,7 @@ REST-API를 이용한 소셜 로그인 방식은 대부분 callback url을 필�
 네이버의 경우, redirect url에 access token 문자열이 쿼리스트링으로 전달되기 때문에 이를 파싱하여 access token을 얻은 다음, 이를 ipc 통신을 통해 로그인 컴포넌트 페이지에게 전달하였습니다.  
 이후의 로그인 과정은 앞서 설명한 다이어그램 과정과 동일합니다.  
 
-![electron_login](https://github.com/dongtimes2/LeetCode/assets/98700888/8b56271e-a9ad-478c-ade8-7e2db6ce4d19)
+![electron_login](https://github.com/dongtimes2/readme_image/assets/98700888/bcadd10c-e44a-41b4-a318-ba68a2ec9419)
 
 <br>
 
@@ -307,7 +307,7 @@ vite로 옮긴 이유는 빌드 시간을 단축하기 위함입니다.
 
 |CRA(기존)|VITE(리뉴얼)|
 |:--:|:--:|
-|![before_build](https://github.com/dongtimes2/LeetCode/assets/98700888/b2aef509-7a61-4a74-b808-fcd2d7e93a3d)|![after_build](https://github.com/dongtimes2/LeetCode/assets/98700888/c3fd5b96-a79f-450b-ab85-c2f7297413b5)|
+|![before_build](https://github.com/dongtimes2/readme_image/assets/98700888/3ff5a300-7854-44c0-aefa-021d9b12ce0d)|![after_build](https://github.com/dongtimes2/readme_image/assets/98700888/91305d15-c1bd-4c75-a6aa-ffab5f045931)|
 |평균 빌드시간: 3분|평균 빌드시간: 39초|
 
 <br>
@@ -326,7 +326,7 @@ vite로 옮긴 이유는 빌드 시간을 단축하기 위함입니다.
 ### AWS 배포
 |프론트엔드|백엔드|
 |:---:|:---:|
-|![front](https://github.com/dongtimes2/LeetCode/assets/98700888/09e30bcf-b8a2-4447-b9fe-c432511fc19c)|![back](https://github.com/dongtimes2/LeetCode/assets/98700888/61b4e353-c88d-4e4f-9990-94eb5b7750da)|
+|![front](https://github.com/dongtimes2/readme_image/assets/98700888/86861956-207b-4540-a57a-24aa63396b08)|![back](https://github.com/dongtimes2/readme_image/assets/98700888/b1fb3ee7-d983-4312-94a4-81b6de645d64)|
 
 
 ## 개발 가이드
