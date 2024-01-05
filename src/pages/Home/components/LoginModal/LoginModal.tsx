@@ -28,7 +28,7 @@ const modalCss = css`
 const LoginModal = () => {
   const navigate = useNavigate();
 
-  const handleModalClick = (event) => {
+  const handleModalClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
 

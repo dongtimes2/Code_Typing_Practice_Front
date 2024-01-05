@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 import Button from '../../../../components/Button/Button';
 import theme from '../../../../styles/theme';
+import { practiceType } from '../../../../types/practice';
 
 const modalCss = css`
   position: absolute;
@@ -33,12 +34,16 @@ const modalCss = css`
   }
 `;
 
-const SelectModal = ({ onTypeSelect }) => {
-  const handleModalClick = (event) => {
+interface Props {
+  onTypeSelect: (type: practiceType) => void;
+}
+
+const SelectModal = ({ onTypeSelect }: Props) => {
+  const handleModalClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
 
-  const handleButtonClick = (type) => {
+  const handleButtonClick = (type: practiceType) => {
     onTypeSelect(type);
   };
 
