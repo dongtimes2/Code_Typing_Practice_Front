@@ -4,10 +4,10 @@ import App from './App';
 import AppContainer from './container/AppContainer';
 import { worker } from './mock/browser';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 const render = async () => {
-  if (import.meta.env.DEV) {
+  if (import.meta.env.VITE_MSW === 'true') {
     await worker.start();
   }
 
