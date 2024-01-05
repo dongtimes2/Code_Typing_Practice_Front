@@ -13,7 +13,11 @@ const bannerCss = css`
   background-color: ${theme.colors.pointLightBlue};
 `;
 
-const Banner = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const Banner = ({ children }: Props) => {
   return (
     <div css={bannerCss}>
       <p>{children}</p>
