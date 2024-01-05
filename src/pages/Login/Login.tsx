@@ -1,4 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
+import { IpcRendererEvent } from 'electron';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,9 +47,12 @@ const Login = () => {
 
   const [token, setToken] = useState('');
 
-  appRuntime?.on('naverToken', (event, naverToken) => {
-    setToken(naverToken);
-  });
+  appRuntime?.on(
+    'naverToken',
+    (event: IpcRendererEvent, naverToken: string) => {
+      setToken(naverToken);
+    },
+  );
 
   useEffect(() => {
     if (token) {
