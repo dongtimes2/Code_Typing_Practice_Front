@@ -34,7 +34,14 @@ const cardCss = css`
   }
 `;
 
-const Card = ({ title, content, logoImgSrc, onClick }) => {
+interface Props {
+  title: string;
+  content: string;
+  logoImgSrc: string;
+  onClick: () => void;
+}
+
+const Card = ({ title, content, logoImgSrc, onClick }: Props) => {
   const handleClick = () => {
     onClick();
   };

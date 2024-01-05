@@ -10,6 +10,7 @@ describe('Card 컴포넌트 테스트', () => {
         title="sampleTitle"
         content="sampleContent"
         logoImgSrc="sampleSource"
+        onClick={vi.fn()}
       />,
     );
     const title = screen.getByText('sampleTitle');
@@ -25,7 +26,14 @@ describe('Card 컴포넌트 테스트', () => {
 
 describe('통합 테스트', () => {
   test('시작하기 버튼이 존재해야 합니다', () => {
-    render(<Card />);
+    render(
+      <Card
+        title="sampleTitle"
+        content="sampleContent"
+        logoImgSrc="sampleSource"
+        onClick={vi.fn()}
+      />,
+    );
     const buttonElement = screen.getByRole('button', {
       name: '시작하기',
     });
@@ -33,7 +41,14 @@ describe('통합 테스트', () => {
   });
 
   test('시작하기 버튼은 disabled 속성이 false여야 합니다', () => {
-    render(<Card />);
+    render(
+      <Card
+        title="sampleTitle"
+        content="sampleContent"
+        logoImgSrc="sampleSource"
+        onClick={vi.fn()}
+      />,
+    );
     const buttonElement = screen.getByRole('button', {
       name: '시작하기',
     });
@@ -42,7 +57,14 @@ describe('통합 테스트', () => {
 
   test('시작하기 버튼을 클릭하면, onClick 함수가 실행되어야 합니다', () => {
     const mockOnClick = vi.fn();
-    render(<Card onClick={mockOnClick} />);
+    render(
+      <Card
+        title="sampleTitle"
+        content="sampleContent"
+        logoImgSrc="sampleSource"
+        onClick={mockOnClick}
+      />,
+    );
     const buttonElement = screen.getByRole('button', {
       name: '시작하기',
     });
