@@ -17,7 +17,11 @@ const layoutCss = css`
   }
 `;
 
-const Layout = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
   return <div css={layoutCss}>{children}</div>;
 };
 

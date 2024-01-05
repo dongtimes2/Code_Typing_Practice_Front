@@ -11,6 +11,8 @@ import Modal from '../../components/Modal/Modal';
 import { PATH } from '../../constants/path';
 import useAuth from '../../hooks/useAuth';
 import { useNavigationStore } from '../../store';
+import { ILanguage } from '../../types/language';
+import { practiceType } from '../../types/practice';
 
 const Home = () => {
   const setLanguage = useNavigationStore((state) => state.setLanguage);
@@ -23,7 +25,7 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  const handleStartButtonClick = (id) => {
+  const handleStartButtonClick = (id: string) => {
     if (isLoggedin) {
       setShowModal(true);
       setLanguage(id);
@@ -32,7 +34,7 @@ const Home = () => {
     }
   };
 
-  const handleTypeSelectButtonClick = (type) => {
+  const handleTypeSelectButtonClick = (type: practiceType) => {
     setType(type);
     navigate(PATH.PRACTICE);
   };
@@ -42,7 +44,7 @@ const Home = () => {
       <Banner>연습할 언어를 선택해주세요</Banner>
       <div className="cardArea">
         {data &&
-          data.map((language) => (
+          data.map((language: ILanguage) => (
             <Card
               key={language.id}
               title={language.name}

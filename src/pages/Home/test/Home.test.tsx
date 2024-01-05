@@ -43,7 +43,7 @@ describe('Home 페이지 통합 테스트', () => {
       name: '시작하기',
     });
     await userEvent.click(buttonElements[0]);
-    const modalElement = await screen.findByText('로그인');
+    const modalElement = await screen.findByText('로그인 하러 가기');
     expect(modalElement).toBeInTheDocument();
   });
 
