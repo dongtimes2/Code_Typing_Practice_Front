@@ -1,4 +1,3 @@
-/*eslint-disable*/
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
@@ -10,9 +9,6 @@ export default defineConfig({
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
-      babel: {
-        plugins: ['@emotion/babel-plugin'],
-      },
     }),
   ],
   server: {
@@ -26,6 +22,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     css: true,
-    setupFiles: './src/test/setupTests.js',
+    setupFiles: './src/test/setupTests.ts',
   },
 });
