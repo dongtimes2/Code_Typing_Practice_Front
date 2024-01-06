@@ -2,14 +2,14 @@ import { useQuery } from '@tanstack/react-query';
 
 import { request } from '../config/axios';
 
-import type { practiceType } from '../../types/practice';
+import type { IPractice, practiceType } from '../../types/practice';
 
 const getPractice = async (
   language: string,
   type: practiceType,
   quantity: number,
 ) => {
-  const response = await request({
+  const response = await request<IPractice[]>({
     method: 'GET',
     url: `practice/${language}`,
     params: {
