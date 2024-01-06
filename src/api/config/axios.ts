@@ -1,18 +1,19 @@
-import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { useUserInfoStore } from '../../store/index';
+import { IRefresh } from '../../types/refresh';
 import { TokenController } from '../../utils/tokenController';
 
 const tokenController = new TokenController();
 
 export const BASE_URL = import.meta.env.VITE_SERVER_URL;
 
-export const request = async (params: AxiosRequestConfig) => {
+export const request = async <T>(params: AxiosRequestConfig) => {
   return axios({
     baseURL: BASE_URL,
     withCredentials: true,
     ...params,
-  }).then((res) => res.data);
+  }).then((res: AxiosResponse<T>) => res.data);
 };
 
 const handleAxiosError = async (error: AxiosError<{ message: string }>) => {
@@ -26,7 +27,7 @@ const handleAxiosError = async (error: AxiosError<{ message: string }>) => {
 
   if (response?.status === 401 && response.data.message === 'Token Expired') {
     try {
-      const { accessToken } = await request({
+      const { accessToken } = await request<IRefresh>({
         method: 'POST',
         url: '/auth/refresh',
       });
