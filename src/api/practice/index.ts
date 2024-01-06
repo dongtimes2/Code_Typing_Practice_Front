@@ -2,7 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 
 import { request } from '../config/axios';
 
-const getPractice = async (language, type, quantity) => {
+import type { practiceType } from '../../types/practice';
+
+const getPractice = async (
+  language: string,
+  type: practiceType,
+  quantity: number,
+) => {
   const response = await request({
     method: 'GET',
     url: `practice/${language}`,
@@ -15,12 +21,16 @@ const getPractice = async (language, type, quantity) => {
   return response;
 };
 
-export const useGetPractice = (language, type, quantity) => {
+export const useGetPractice = (
+  language: string,
+  type: practiceType,
+  quantity: number,
+) => {
   return useQuery({
     queryKey: ['practice', language, type, quantity],
     queryFn: () => getPractice(language, type, quantity),
     enabled: !!language && !!type && !!quantity,
     staleTime: 1000 * 60 * 60 * 24 * 7,
-    cacheTime: 1000 * 60 * 60 * 24 * 7,
+    gcTime: 1000 * 60 * 60 * 24 * 7,
   });
 };

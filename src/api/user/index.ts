@@ -11,7 +11,7 @@ const getUser = async () => {
   return response;
 };
 
-export const useGetUser = (enabled) => {
+export const useGetUser = (enabled: string | null) => {
   return useQuery({
     queryKey: ['users'],
     queryFn: getUser,
@@ -19,7 +19,13 @@ export const useGetUser = (enabled) => {
   });
 };
 
-export const patchUser = async (payload) => {
+interface IPayload {
+  practiceNumber: number;
+  sound: boolean;
+  isColorWeakness: boolean;
+}
+
+export const patchUser = async (payload: IPayload) => {
   const response = await request({
     method: 'PATCH',
     url: '/users',

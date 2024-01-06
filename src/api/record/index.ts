@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { practiceType } from '../../types/practice';
 import { request } from '../config/axios';
 
 const getRecord = async () => {
@@ -21,7 +22,14 @@ export const useGetRecord = () => {
   });
 };
 
-export const postRecord = async (payload) => {
+interface IPayload {
+  type: practiceType;
+  language: string;
+  accuracy: number;
+  typingSpeed: number;
+}
+
+export const postRecord = async (payload: IPayload) => {
   const response = await request({
     method: 'POST',
     url: '/records',

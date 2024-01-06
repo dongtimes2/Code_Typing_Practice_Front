@@ -1,13 +1,13 @@
-import axios from 'axios';
+import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 
-import { useUserInfoStore } from '../../store';
+import { useUserInfoStore } from '../../store/index';
 import { TokenController } from '../../utils/tokenController';
 
 const tokenController = new TokenController();
 
 export const BASE_URL = import.meta.env.VITE_SERVER_URL;
 
-export const request = async (params) => {
+export const request = async (params: AxiosRequestConfig) => {
   return axios({
     baseURL: BASE_URL,
     withCredentials: true,
@@ -15,16 +15,16 @@ export const request = async (params) => {
   }).then((res) => res.data);
 };
 
-const handleAxiosError = async (error) => {
+const handleAxiosError = async (error: AxiosError<{ message: string }>) => {
   const { config, response } = error;
 
-  if (response.status === 401 && response.data.message === 'Invalid Token') {
+  if (response?.status === 401 && response.data.message === 'Invalid Token') {
     useUserInfoStore.getState().reset();
     tokenController.clear();
     window.location.href = '/';
   }
 
-  if (response.status === 401 && response.data.message === 'Token Expired') {
+  if (response?.status === 401 && response.data.message === 'Token Expired') {
     try {
       const { accessToken } = await request({
         method: 'POST',

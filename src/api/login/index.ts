@@ -1,6 +1,6 @@
 import { request } from '../config/axios';
 
-export const postNaverLogin = async (code) => {
+export const postNaverLogin = async (code: string) => {
   const response = await request({
     method: 'POST',
     url: '/auth/login',
