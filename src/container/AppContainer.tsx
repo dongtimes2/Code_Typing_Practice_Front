@@ -5,7 +5,11 @@ import { HashRouter } from 'react-router-dom';
 import { queryClient } from '../api/config/query';
 import GlobalStyles from '../styles/GlobalStyles';
 
-const AppContainer = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const AppContainer = ({ children }: Props) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={true} />
