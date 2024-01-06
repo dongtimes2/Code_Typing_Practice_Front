@@ -53,6 +53,7 @@ const NaverCallback = () => {
   };
 
   useEffect(() => {
+    if (!code) return;
     mutate(code);
   }, [mutate, code]);
 
