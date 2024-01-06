@@ -1,7 +1,8 @@
+import { ILogin } from '../../types/login';
 import { request } from '../config/axios';
 
 export const postNaverLogin = async (code: string) => {
-  const response = await request({
+  const response = await request<ILogin>({
     method: 'POST',
     url: '/auth/login',
     data: {
