@@ -25,7 +25,13 @@ const buttonCss = css`
   }
 `;
 
-const Button = ({ children, onClick, disabled = false }) => {
+interface Props {
+  children: React.ReactNode;
+  onClick: () => void;
+  disabled?: boolean;
+}
+
+const Button = ({ children, onClick, disabled = false }: Props) => {
   const handleClick = () => {
     onClick();
   };
