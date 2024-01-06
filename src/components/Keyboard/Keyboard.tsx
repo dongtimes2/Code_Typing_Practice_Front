@@ -67,10 +67,10 @@ const Keyboard = () => {
     (state) => state.isPracticeFinished,
   );
 
-  const [codeList, setCodeList] = useState([]);
+  const [codeList, setCodeList] = useState<string[]>([]);
 
   const handleKeyDown = useCallback(
-    (event) => {
+    (event: KeyboardEvent) => {
       if (isPracticeFinished) return;
       if (sound) {
         const audio = new Audio(typingSound);
@@ -82,7 +82,7 @@ const Keyboard = () => {
   );
 
   const handleKeyUp = useCallback(
-    (event) => {
+    (event: KeyboardEvent) => {
       if (isPracticeFinished) return;
       setCodeList((list) => list.filter((code) => code !== event.code));
     },
