@@ -4,6 +4,8 @@ import { timeConverter } from './utils/timeConverter';
 import { useGetRecord, useGetRecordStatistics } from '../../../../api/record';
 import theme from '../../../../styles/theme';
 
+import type { practiceType } from '../../../../types/practice';
+
 const moduleCss = css`
   display: flex;
   flex-direction: column;
@@ -35,7 +37,11 @@ const moduleCss = css`
   }
 `;
 
-const recordCss = (props) => css`
+interface CssProps {
+  type: practiceType;
+}
+
+const recordCss = (props: CssProps) => css`
   display: flex;
   gap: 1.25rem;
 

@@ -10,7 +10,11 @@ const layoutCss = css`
   padding: 1rem;
 `;
 
-const Layout = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
   return <div css={layoutCss}>{children}</div>;
 };
 
