@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { IUser } from '../../types/user';
 import { request } from '../config/axios';
 
 const getUser = async () => {
-  const response = await request({
+  const response = await request<IUser>({
     method: 'GET',
     url: '/users',
   });
