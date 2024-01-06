@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 
 import { practiceType } from '../../types/practice';
+import { IRecord, IStastics } from '../../types/record';
 import { request } from '../config/axios';
 
 const getRecord = async () => {
-  const response = await request({
+  const response = await request<IRecord[]>({
     method: 'GET',
     url: '/records',
     params: {
@@ -40,7 +41,7 @@ export const postRecord = async (payload: IPayload) => {
 };
 
 const getRecordStatistics = async () => {
-  const response = await request({
+  const response = await request<IStastics[]>({
     method: 'GET',
     url: '/records',
     params: {
