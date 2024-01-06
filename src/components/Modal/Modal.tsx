@@ -13,10 +13,20 @@ const backgroundCss = css`
   background-color: ${theme.colors.black50};
 `;
 
-const Modal = ({ children, setShowModal, disableBackgroundExit = false }) => {
+interface Props {
+  children: React.ReactNode;
+  setShowModal?: React.Dispatch<React.SetStateAction<boolean>>;
+  disableBackgroundExit?: boolean;
+}
+
+const Modal = ({
+  children,
+  setShowModal,
+  disableBackgroundExit = false,
+}: Props) => {
   const handleBackgroundClick = () => {
     if (disableBackgroundExit) return;
-    setShowModal(false);
+    setShowModal && setShowModal(false);
   };
 
   return (
