@@ -5,7 +5,7 @@
  * @returns 진행도
  */
 
-export const getProgress = (answeredCount, totalCount) => {
+export const getProgress = (answeredCount: number, totalCount: number) => {
   if (totalCount === 0) return 0;
-  return ((answeredCount / totalCount) * 100).toFixed(0);
+  return Number(((answeredCount / totalCount) * 100).toFixed(0));
 };

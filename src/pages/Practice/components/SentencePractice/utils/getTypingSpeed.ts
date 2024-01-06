@@ -5,7 +5,7 @@
  * @returns 타수
  */
 
-export const getTypingSpeed = (charCount, second) => {
+export const getTypingSpeed = (charCount: number, second: number) => {
   return Number(((charCount / second) * 10).toFixed(0));
 };
 
@@ -16,9 +16,9 @@ export const getTypingSpeed = (charCount, second) => {
  * @param {number} index 문제 인덱스
  */
 export const getTotalTypingSpeed = (
-  accumulatedTypingSpeed,
-  currentTypingSpeed,
-  index,
+  accumulatedTypingSpeed: number,
+  currentTypingSpeed: number,
+  index: number,
 ) => {
   if (index === 0) {
     return currentTypingSpeed;

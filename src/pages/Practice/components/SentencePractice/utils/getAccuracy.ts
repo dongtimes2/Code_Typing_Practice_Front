@@ -5,7 +5,7 @@
  * @returns {number} 정확도
  */
 
-export const getAccuracy = (targetText, userInput) => {
+export const getAccuracy = (targetText: string, userInput: string) => {
   if (!userInput) return 0;
 
   const inputLength = userInput.length;
@@ -29,9 +29,9 @@ export const getAccuracy = (targetText, userInput) => {
  */
 
 export const getTotalAccuracy = (
-  accumulatedAccuracy,
-  currentAccuracy,
-  index,
+  accumulatedAccuracy: number,
+  currentAccuracy: number,
+  index: number,
 ) => {
   if (index === 0) {
     return currentAccuracy;
@@ -51,7 +51,7 @@ export const getTotalAccuracy = (
  * @returns {number} 옳게 입력한 문자의 개수
  */
 
-export const getCorrectCharCount = (targetText, userInput) => {
+export const getCorrectCharCount = (targetText: string, userInput: string) => {
   if (!userInput) return 0;
 
   let correctCharCount = 0;

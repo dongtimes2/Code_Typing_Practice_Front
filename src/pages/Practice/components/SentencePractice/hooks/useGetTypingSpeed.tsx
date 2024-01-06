@@ -11,20 +11,19 @@ const useGetTypingSpeed = () => {
   const backspaceCount = useRef(0);
 
   const [typingSpeed, setTypingSpeed] = useState(0);
-  const [targetText, setTargetText] = useState('');
-  const [userInput, setUserInput] = useState('');
+  const [targetTextInsert, setTargetTextInsert] = useState('');
+  const [userInputInsert, setUserInputInsert] = useState('');
 
-  const onBackspaceKeyDown = () => {
+  const handleBackspaceKeyDown = () => {
     backspaceCount.current += 1;
   };
 
   useEffect(() => {
     timerWorker.onmessage = (event) => {
       const seconds = Number(event.data.toFixed(2));
-      const speed = Number(
-        ((correctCharCount.current / seconds) * 60).toFixed(0) -
-          backspaceCount.current * 3,
-      );
+      const speed =
+        Number(((correctCharCount.current / seconds) * 60).toFixed(0)) -
+        backspaceCount.current * 3;
 
       isStarted.current && setTypingSpeed(speed > 0 ? speed : 0);
     };
@@ -35,21 +34,29 @@ const useGetTypingSpeed = () => {
   }, []);
 
   useEffect(() => {
-    if (userInput.length === 0) {
+    if (userInputInsert.length === 0) {
       setTypingSpeed(0);
       isStarted.current = false;
       backspaceCount.current = 0;
       timerWorker.postMessage('stop');
       return;
-    } else if (userInput.length !== 0 && isStarted.current === false) {
+    } else if (userInputInsert.length !== 0 && isStarted.current === false) {
       isStarted.current = true;
       timerWorker.postMessage('start');
     }
 
-    correctCharCount.current = getCorrectCharCount(targetText, userInput);
-  }, [userInput, targetText]);
+    correctCharCount.current = getCorrectCharCount(
+      targetTextInsert,
+      userInputInsert,
+    );
+  }, [userInputInsert, targetTextInsert]);
 
-  return [typingSpeed, setTargetText, setUserInput, onBackspaceKeyDown];
+  return {
+    typingSpeed,
+    setTargetTextInsert,
+    setUserInputInsert,
+    handleBackspaceKeyDown,
+  };
 };
 
 export default useGetTypingSpeed;

@@ -6,7 +6,11 @@
  * @returns 동일한 인덱스 위치에서 사용자가 입력한 문자와 문제 문자가 같으면 'correct', 다르면 'wrong'
  */
 
-export const getCharacterClass = (userInput, targetText, index) => {
+export const getCharacterClass = (
+  userInput: string,
+  targetText: string,
+  index: number,
+) => {
   if (index < userInput.length) {
     if (userInput[index] === targetText[index]) {
       return 'correct';

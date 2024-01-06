@@ -2,8 +2,9 @@ import { css } from '@emotion/react';
 
 import Button from '../../../../components/Button/Button';
 import { SIDEBAR_WIDTH } from '../../../../constants/layout';
-import { useResultStore } from '../../../../store';
+import { useResultStore } from '../../../../store/index';
 import theme from '../../../../styles/theme';
+import { practiceType } from '../../../../types/practice';
 
 const modalCss = css`
   position: absolute;
@@ -36,7 +37,17 @@ const modalCss = css`
   }
 `;
 
-const ResultModal = ({ type, onReplayButtonClick, onGoHomeButtonClick }) => {
+interface Props {
+  type: practiceType;
+  onReplayButtonClick: () => void;
+  onGoHomeButtonClick: () => void;
+}
+
+const ResultModal = ({
+  type,
+  onReplayButtonClick,
+  onGoHomeButtonClick,
+}: Props) => {
   const totalAccuracy = useResultStore((state) => state.totalAccuracy);
   const totalTypoCount = useResultStore((state) => state.totalTypoCount);
   const totalTypingSpeed = useResultStore((state) => state.totalTypingSpeed);

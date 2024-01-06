@@ -5,7 +5,7 @@
  * @returns 정확도
  */
 
-export const getAccuracy = (correctCount, answeredCount) => {
+export const getAccuracy = (correctCount: number, answeredCount: number) => {
   if (answeredCount === 0) return 0;
-  return ((correctCount / answeredCount) * 100).toFixed(0);
+  return Number(((correctCount / answeredCount) * 100).toFixed(0));
 };

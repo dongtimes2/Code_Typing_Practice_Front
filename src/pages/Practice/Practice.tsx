@@ -15,7 +15,7 @@ import {
   useNavigationStore,
   usePracticeStateStore,
   useResultStore,
-} from '../../store';
+} from '../../store/index';
 
 const Practice = () => {
   const language = useNavigationStore((state) => state.language);
@@ -43,7 +43,9 @@ const Practice = () => {
     });
     reset();
     setResetSeed((prev) => prev + 1);
-    queryClient.resetQueries(['practice', language, type]);
+    queryClient.resetQueries({
+      queryKey: ['practice'],
+    });
     setIsPracticeFinished(false);
   };
 
@@ -65,7 +67,9 @@ const Practice = () => {
     }
 
     return () => {
-      queryClient.removeQueries(['practice', language, type]);
+      queryClient.removeQueries({
+        queryKey: ['practice'],
+      });
       reset();
     };
   }, [language, type, navigate, reset]);
