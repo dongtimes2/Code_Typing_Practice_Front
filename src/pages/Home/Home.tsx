@@ -11,7 +11,6 @@ import Modal from '../../components/Modal/Modal';
 import { PATH } from '../../constants/path';
 import useAuth from '../../hooks/useAuth';
 import { useNavigationStore } from '../../store';
-import { ILanguage } from '../../types/language';
 import { practiceType } from '../../types/practice';
 
 const Home = () => {
@@ -43,16 +42,15 @@ const Home = () => {
     <Layout>
       <Banner>연습할 언어를 선택해주세요</Banner>
       <div className="cardArea">
-        {data &&
-          data.map((language: ILanguage) => (
-            <Card
-              key={language.id}
-              title={language.name}
-              content={language.description}
-              logoImgSrc={language.imagePath}
-              onClick={() => handleStartButtonClick(language.id)}
-            />
-          ))}
+        {data?.map((language) => (
+          <Card
+            key={language.id}
+            title={language.name}
+            content={language.description}
+            logoImgSrc={language.imagePath}
+            onClick={() => handleStartButtonClick(language.id)}
+          />
+        ))}
       </div>
 
       {showModal && (

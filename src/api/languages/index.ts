@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { ILanguage } from '../../types/language';
 import { request } from '../config/axios';
 
 const getLanguages = async () => {
-  const response = await request({
+  const response = await request<ILanguage[]>({
     method: 'GET',
     url: '/languages',
   });
