@@ -3,7 +3,7 @@ export class TokenController {
     return localStorage.getItem('accessToken');
   }
 
-  setAccessToken(token) {
+  setAccessToken(token: string) {
     localStorage.setItem('accessToken', token);
   }
 
