@@ -18,7 +18,11 @@ const contentCss = css`
   }
 `;
 
-const Layout = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
