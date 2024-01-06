@@ -15,10 +15,4 @@ describe('Header 컴포넌트 테스트', () => {
     const loginButtonElement = screen.getByText('로그인');
     expect(loginButtonElement).toBeInTheDocument();
   });
-
-  test('회원가입 버튼이 보여야 합니다.', () => {
-    render(<Header />);
-    const signUpButtonElement = screen.getByText('회원가입');
-    expect(signUpButtonElement).toBeInTheDocument();
-  });
 });

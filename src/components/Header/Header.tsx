@@ -6,7 +6,7 @@ import { postLogout } from '../../api/logout';
 import { HEADER_HEIGHT } from '../../constants/layout';
 import { PATH } from '../../constants/path';
 import useAuth from '../../hooks/useAuth';
-import { useUserInfoStore } from '../../store';
+import { useUserInfoStore } from '../../store/index';
 import theme from '../../styles/theme';
 
 const headerCss = css`
