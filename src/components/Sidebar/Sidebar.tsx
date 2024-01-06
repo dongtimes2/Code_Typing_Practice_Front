@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import defaultUserImage from '../../assets/images/user.png';
 import useAuth from '../../hooks/useAuth';
-import { useUserInfoStore } from '../../store';
+import { useUserInfoStore } from '../../store/index';
 import theme from '../../styles/theme';
 
 const sidebarCss = css`
@@ -48,7 +48,7 @@ const Sidebar = () => {
         {isLoggedin ? (
           <>
             <img src={userProfileImage} alt="user profile image" />
-            <p>{userNickname.substr(0, 5)} 님 환영합니다</p>
+            <p>{userNickname.substring(0, 5)} 님 환영합니다</p>
           </>
         ) : (
           <>
