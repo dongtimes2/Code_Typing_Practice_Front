@@ -57,7 +57,7 @@ export const KEY_DATA = [
   { value: 'Space', code: 'Space' },
   { value: 'Alt', code: 'AltRight' },
   { value: 'Control', code: 'ControlRight' },
-];
+] as const;
 
 export const FORBIDDEN_KEY_DATA_LIST = [
   { value: 'Tab', code: 'Tab' },
@@ -91,7 +91,7 @@ export const FORBIDDEN_KEY_DATA_LIST = [
   { value: 'F12', code: 'F12' },
   { value: 'NumLock', code: 'NumLock' },
   { value: 'ScrollLock', code: 'ScrollLock' },
-];
+] as const;
 
 export const FORBIDDEN_KEY_DATA = {
   Tab: true,
@@ -125,4 +125,4 @@ export const FORBIDDEN_KEY_DATA = {
   F12: true,
   NumLock: true,
   ScrollLock: true,
-};
+} as const;

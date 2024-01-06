@@ -5,4 +5,4 @@ export const PATH = {
   LOGIN: '/login',
   NAVER_LOGIN_CALLBACK: '/auth/naver/callback',
   SETTINGS: '/settings',
-};
+} as const;
