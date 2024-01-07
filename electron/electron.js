@@ -1,4 +1,3 @@
-/*eslint-disable */
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { join } = require('path');
 const isDev = require('electron-is-dev');
