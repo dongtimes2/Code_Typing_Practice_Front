@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
 
 export const handlers = [
-  http.get(`${import.meta.env.VITE_SERVER_URL}/languages`, () => {
+  http.get(`${import.meta.env.VITE_SERVER_URL_DEV}/languages`, () => {
     return HttpResponse.json([
       {
         id: 'python',
