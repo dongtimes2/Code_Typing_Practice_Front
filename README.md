@@ -6,14 +6,36 @@
 <hr/>
 <div align="center" style="max-width: 100%;">
   
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Electron |
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Electron |
   | :---: | :---: | :---: | :---: |
-  | Edge| last version| last version| last version
+  | 119.0 ~ latest | 119.0 ~ latest | 17.1 ~ latest |지원하나 제공하지 않음|
 </div>
 <hr />
-<br />
 
-## 개요
+### 참고
+
+<details>
+<summary>Electron을 제공하지 못하는 이유</summary>
+<div>
+
+&nbsp;  
+Electron의 경우 빌드물을 정상적으로 배포하기 위해서는 code signing 인증 과정을 거쳐야 합니다.  
+인증을 거치기 위해서는 인증 기관을 통해 인증서를 발급받아야 하는데, 발급에 필요한 비용이 최소 30만원으로 매우 비쌌기 때문에, 경제적인 이유로 인증 절차를 포기할 수 밖에 없었습니다.  
+인증서 없이 빌드물을 배포할 경우, 운영체제 단에서 프로그램의 실행을 막거나 보안 경고를 띄우기 때문에, 결과적으로 배포는 지원하지 않기로 결정하였습니다.  
+
+</div>
+</details>
+
+<details>
+<summary>Electron 빌드물 실행 영상</summary>
+<div>
+
+https://github.com/dongtimes2/readme_image/assets/98700888/a1b88d91-ba07-4634-b41e-67b4b4d339c4
+
+</div>
+</details>
+
+# 개요
 
 - 프로젝트 이름: 🧑‍💻Code Typing Practice🧑‍💻
 - 프로젝트 소개: 영타가 느린 개발자를 위해 만들어진, 코드 타자 연습 웹 어플리케이션
@@ -22,9 +44,12 @@
   - 리뉴얼: 2023.11 ~
 - 멤버: 강민성, 유동하, 최현오
 
-## 이용 방법
+# 이용 방법
 
-### 로그인
+<details>
+<summary>로그인</summary>
+<div>
+
 |메인 화면|로그인 화면|
 |:---:|:---:|
 |![main](https://github.com/dongtimes2/readme_image/assets/98700888/7e9af24d-d384-473a-b70a-92ed6482a83f)|![login](https://github.com/dongtimes2/readme_image/assets/98700888/b4372cda-cafc-4c2c-832f-000942d086ac)|
@@ -34,51 +59,61 @@
 |:---:|:---:|
 |![login_success](https://github.com/dongtimes2/readme_image/assets/98700888/56143eca-54d8-42db-b386-efd3ad98f44c)|![blank](https://github.com/dongtimes2/readme_image/assets/98700888/3e8f75bb-2799-43f7-b6c9-ddf144b88d0f)|
 |로그인이 완료되면 다시 메인 페이지로 리다이렉트됩니다<br>네이버 계정의 닉네임과 프로필 사진이 우측 바에 표시됩니다|&nbsp;&nbsp;&nbsp;&nbsp;|
+</div>
+</details>
 
-<br>
-
-### 시작하기
+<details>
+<summary>시작하기</summary>
+<div>
 
 |메인 화면|연습모드 선택 모달|
 |:---:|:---:|
 |![cards](https://github.com/dongtimes2/readme_image/assets/98700888/56143eca-54d8-42db-b386-efd3ad98f44c)|![practice_type](https://github.com/dongtimes2/readme_image/assets/98700888/f7507f8d-2625-4094-a06f-fc98933f76df)|
 |메인 화면에는 각 프로그래밍 언어의 로고와 설명이 담긴 카드가 여러 개 표시됩니다|시작하기 버튼을 클릭하면 연습 종류를 선택할 수 있는 모달이 표시됩니다<br>연습 버튼을 클릭할 경우 연습 페이지로 이동합니다|
+</div>
+</details>
 
-<br>
-
-### 낱말 연습
+<details>
+<summary>낱말 연습</summary>
+<div>
 
 |낱말 연습 화면|연습 결과 화면|
 |:--:|:--:|
 |![word](https://github.com/dongtimes2/readme_image/assets/98700888/cfa6f467-8a2e-47f8-b485-0f586cf98f1b)|![word_result](https://github.com/dongtimes2/readme_image/assets/98700888/3c7471ec-9940-470e-bcaf-446090d68d4e)|
 |프로그래밍 언어가 사용하는 키워드로 낱말 연습 문제가 구성됩니다<br>화면 상단에는 '정확도', '오타수', '진행도'가 표시되며, 하단에는 문제와 유저가 입력한 텍스트가 표시됩니다<br>옳게 입력했는지, 혹은 틀리게 입력했는지에 따라 유저가 입력한 텍스트의 색상이 다르게 표시됩니다|모든 연습을 마쳤을 경우 연습 결과 모달이 나타납니다<br>|
+</div>
+</details>
 
-<br>
-
-### 문장 연습
+<details>
+<summary>문장 연습</summary>
+<div>
 
 |문장 연습 화면|문장 연습 결과|
 |:--:|:--:|
 |![sentence](https://github.com/dongtimes2/readme_image/assets/98700888/c2971a1a-8083-4121-9db0-27518b77d967)|![sentence_result](https://github.com/dongtimes2/readme_image/assets/98700888/eb3ead1f-7462-40af-8a92-8ca217833ec2)|
 |프로그래밍 언어 코드 한 줄로 문장 연습 문제가 구성됩니다<br>화면 상단에는 '현재 타수', '평균 타수', '현재 정확도', '누적 정확도', '진행도'가 표시되며, <br>하단에는 문제와 유저가 입력한 텍스트가 표시됩니다<br>옳게 입력했는지, 혹은 틀리게 입력했는지에 따라 유저가 입력한 텍스트의 색상이 다르게 표시됩니다|모든 연습을 마쳤을 경우 연습 결과 모달이 나타납니다|
+</div>
+</details>
 
-<br>
-
-### 설정 및 기록
+<details>
+<summary>설정 및 기록</summary>
+<div>
 
 |메인 화면|설정 화면|
 |:--:|:--:|
 |![main](https://github.com/dongtimes2/readme_image/assets/98700888/56143eca-54d8-42db-b386-efd3ad98f44c)|![settings](https://github.com/dongtimes2/readme_image/assets/98700888/e55603c6-57a3-42f0-85dd-df6080770264)|
 |로그인했을 경우 헤더 우측에 '설정' 버튼이 표시됩니다<br>설정 버튼을 누를 경우 설정 화면으로 이동합니다|설정 화면에서는 환경 설정을 할 수 있고, 유저의 연습 기록도 열람할 수 있습니다<br>'풀 연습문제 개수', '효과음', '색약 모드' 여부를 설정할 수 있고,<br>'최근 20개 연습 결과 기록', '평균 정확도' 및 '평균 타수' 기록을 확인할 수 있습니다|
+</div>
+</details>
 
-## 기술 스택
+# 기술 스택
 
 리뉴얼을 거치면서 기술 스택을 변경하였습니다.  
 이전에 사용된 기술 스택은 취소선 처리하였습니다.
 
-### 프론트엔드
+## 프론트엔드
 
-#### 핵심
+### 핵심
 
 - React
 - ~~React-Redux, Redux Toolkit~~ => Zustand
@@ -87,45 +122,45 @@
 - ~~firebase~~ => REST-API를 이용한 자체 구현
 - Electron
 
-#### 그 외
+### 그 외
 
 - husky
 - msw
 
-#### 테스트 환경
+### 테스트 환경
 
 - vitest
 
-#### 배포
+### 배포
 
 - ~~Netlify~~ => AWS
 
-### 백엔드
+## 백엔드
 
-#### 핵심
+### 핵심
 
 - TypeScript
 - Express
 - MongoDB
 
-#### 그 외
+### 그 외
 
 - jwt
 - husky
 
-#### 테스트 환경
+### 테스트 환경
 
 - supertest
 - jest
 - mongodb-memory-server
 
-#### 배포
+### 배포
 
 - AWS
 
-## 기술 및 구현 상세 내용
+# 기술 및 구현 상세 내용
 
-### 타수 측정
+## 타수 측정
 
 문장 연습에서 사용되는 타수 측정 공식은 아래와 같습니다.  
 &nbsp;  
@@ -150,9 +185,9 @@ $`CurrentTypingSpeed = \frac{CorrectWordCount}{Seconds} \times 60 - BackspaceCou
 
 <br>
 
-### 휴먼에러 막기
+## 휴먼에러 막기
 
-#### 도입 배경
+### 도입 배경
 
 프로그래밍 언어는 영어, 숫자, 특수기호로 구성되어 있습니다. (일부 난해한 언어 제외)  
 어플리케이션의 목적은 프로그래밍 언어를 따라 치는 것이기 때문에 앞서 언급한 값만 입력으로 받을 필요성이 있었습니다.  
@@ -162,7 +197,7 @@ $`CurrentTypingSpeed = \frac{CorrectWordCount}{Seconds} \times 60 - BackspaceCou
 화살표키는 input의 커서를 이동시키기 때문에, 항상 문자열 끝에서만 값이 입력되고 삭제되어야 한다는 일관된 규칙을 적용하는데 어려움이 생깁니다.  
 따라서 각각의 키에 바인딩된 코드를 모두 조사한 다음, 그 중에서 입력되면 안되는 키만을 모은 배열을 추가로 작성하여 필터링 과정에 활용하였고, 잘못된 입력으로 인한 버그 발생 가능성을 낮추는데 성공하였습니다.  
 
-#### 동작 과정
+### 동작 과정
 
 input이 발생했을 때 이벤트 동작이 onKeyDown -> onChange -> onKeyUp 순으로 진행된다는 점을 이용하였습니다.  
 아래 그림은 진행 과정을 다이어그램으로 나타낸 것입니다.  
@@ -173,19 +208,19 @@ boolean값을 저장하는 useRef 변수를 하나 생성한 뒤, onKeyDown 이�
 
 <br>
 
-### jwt를 활용한 소셜 로그인
+## jwt를 활용한 소셜 로그인
 
-#### 도입 배경
+### 도입 배경
 
 기존에는 소셜 로그인을 구현할 때 firebase 라이브러리를 이용하였으나 라이브러리 크기가 너무 커 빌드하는 시간이 오래 걸렸고, electron으로 빌드한 환경에서 제대로 동작하지 않는다는 치명적인 단점이 있었습니다.  
 따라서 리뉴얼을 거치며 firebase를 제거하고, REST-API를 활용한 네이버 소셜 로그인 방식으로 변경하였습니다.  
 그 결과 어플리케이션의 크기도 줄일 수 있었고, electron으로 빌드한 환경에서도 소셜 로그인을 동작시킬 수 있었습니다.  
 
-#### 동작 과정
+### 동작 과정
 
 ![diagram](https://github.com/dongtimes2/readme_image/assets/98700888/45c05e60-bfa2-43ea-a971-424edfa18711)
 
-#### token을 이용한 보안
+### token을 이용한 보안
 
 refresh token의 만료기간은 2주로 잡았습니다.  
 refresh token은 서버로부터 cookie에 담겨 전달되는데, httpOnly와 secure 옵션을 주어 xss 공격을 방지하고자 하였고, sameSite 속성에 strict 값을 주어 csrf 공격을 예방하고자 하였습니다.
@@ -193,26 +228,26 @@ refresh token은 서버로부터 cookie에 담겨 전달되는데, httpOnly와 s
 
 <br>
 
-### 새로고침 로그인 유지 및 라우팅 접근 제한
+## 새로고침 로그인 유지 및 라우팅 접근 제한
 
-#### 도입 배경
+### 도입 배경
 
 로그인 이후 유저의 닉네임 및 프로필 사진 정보를 전역 상태관리 라이브러리에 보관하였으나, 새로고침이 발생했을 때 값이 모두 초기화되어 결과적으로 로그인이 풀리는 현상이 발생하였습니다.  
 따라서 새로고침이 발생했을 때도 로그인을 유지시키는 방법이 필요했습니다.  
 또한 로그인 하지 않은 유저는 특정 페이지(연습하기, 설정)에 접근할 수 없도록 막을 필요성이 있었습니다.  
 
-#### 토큰 컨트롤러 class 구현
+### 토큰 컨트롤러 class 구현
 
 이 어플리케이션은 token을 이용한 인증/인가 작업을 수행하기 때문에, 클라이언트가 서버로부터 발급받은 token을 용이하게 관리할 필요성이 있습니다.  
 따라서 '토큰 컨트롤러'라는 이름을 가진 class를 생성하여, localStorage에 access token을 저장하거나 삭제하거나 불러오는 메서드를 각각 구현하였습니다.  
 그 결과 단순한 메서드 호출로도 access token을 관리할 수 있게 되었습니다.
 
-#### 전역 상태관리와 custom hook의 결합
+### 전역 상태관리와 custom hook의 결합
 
 로그인 정보는 모든 페이지에서 사용되기 때문에, 전역 상태관리 라이브러리에 유저 정보를 저장했으며, custom hook을 만들어 로그인 여부 확인 및 로그아웃 기능을 구현하였습니다. 이 때 custom hook은 전역 상태관리 라이브러리에 저장된 값을 기반으로 돌아가도록 하였습니다.  
 아래는 custom hook의 구조를 표현한 의사코드 입니다.
 
-```jsx
+```js
 const useAuth = () => {
   const isLoggedin = 전역 상태관리 라이브러리 값();
   const setIsLoggedin = 전역 상태관리 라이브러리 값();
@@ -247,7 +282,7 @@ const useAuth = () => {
 
 <br>
 
-### 색약 모드 및 WCAG 2.1 준수
+## 색약 모드 및 WCAG 2.1 준수
 
 어플리케이션이 맨 처음 개발되고 난 뒤, QA를 위해 부트캠프 동기생을 대상으로 알파 테스트를 진행하였습니다.  
 그 결과 한 유저로부터 정타/오타 판별을 위해 사용되는 글자의 색 구분이 색약이 있는 사람에게는 힘들다는 피드백을 얻었습니다.  
@@ -271,9 +306,9 @@ const useAuth = () => {
 
 <br>
 
-### ELECTRON 및 소셜로그인  
+## ELECTRON 및 소셜로그인  
 
-#### 도입 배경
+### 도입 배경
 
 기존 프로젝트에서 가장 큰 난관이었던 부분 중 하나는 바로 electron으로 빌드한 어플리케이션은 소셜 로그인이 작동하지 않는다는 점이었습니다.  
 따라서 firebase 라이브러리 대신, REST-API를 이용한 소셜 로그인을 도입하게 되었습니다.  
@@ -283,7 +318,7 @@ REST-API를 이용한 소셜 로그인 방식은 대부분 callback url을 필�
 하지만 electron으로 빌드한 어플리케이션은 http url이 아닌 file url을 가지고 있기 때문에 http 방식의 callback url 방식을 그대로 사용할 경우 어플리케이션이 OAuth 서버로부터 응답을 받을 수 없다는 문제가 발생합니다.  
 이 문제를 해결하기 위해 electron의 ipc를 활용하였습니다.  
 
-#### 구현 상세
+### 구현 상세
 
 유저가 소셜 로그인을 시도할 경우, 네이버 로그인 창(renderer)을 새롭게 열어 로그인하도록 하였습니다.  
 이후 로그인 결과가 redirect url로 전송된다는 점에 착안하여, 로그인 창이 redirect url로 전환되었을 때를 감지(will-navigate)하도록 하였습니다.  
@@ -294,7 +329,7 @@ REST-API를 이용한 소셜 로그인 방식은 대부분 callback url을 필�
 
 <br>
 
-### 빌드 시간  
+## 빌드 시간  
 
 프론트엔드의 경우, 기존에는 CRA를 사용했으나 리뉴얼을 거치며 vite로 마이그레이션을 거쳤습니다.  
 vite로 옮긴 이유는 빌드 시간을 단축하기 위함입니다.  
@@ -312,9 +347,9 @@ vite로 옮긴 이유는 빌드 시간을 단축하기 위함입니다.
 
 <br>
 
-### 상태 관리
+## 상태 관리
 
-#### react-query
+### react-query
 
 어플리케이션 특성상 최신 데이터를 서버로부터 계속해서 받아올 필요성이 없기 때문에, 한 번 받은 데이터를 오랫동안 캐싱해야 서버의 부하를 기여할 수 있다고 판단하였습니다.  
 이를 위해, 기존에는 Redux Toolkit에 Redux-Saga를 사용하여 서버로 가져온 데이터를 저장하였습니다.  
@@ -323,28 +358,31 @@ vite로 옮긴 이유는 빌드 시간을 단축하기 위함입니다.
 
 <br>
 
-### AWS 배포
+## AWS 배포
 |프론트엔드|백엔드|
 |:---:|:---:|
 |![front](https://github.com/dongtimes2/readme_image/assets/98700888/86861956-207b-4540-a57a-24aa63396b08)|![back](https://github.com/dongtimes2/readme_image/assets/98700888/b1fb3ee7-d983-4312-94a4-81b6de645d64)|
 
 
-## 개발 가이드
+# 개발 가이드
 
-### 환경 변수
+## 환경 변수
 
 프로젝트 폴더 root 위치에 .env 파일을 만들고 다음과 같이 환경변수를 설정해주어야 합니다.
 
-#### 프론트엔드
+### 프론트엔드
 
 ```
 VITE_SERVER_URL  // 백엔드 서버 주소입니다.
+VITE_SERVER_URL_DEV  // 테스트용 백엔드 서버 주소입니다.
 VITE_NAVER_LOGIN_CLIENT_ID  // 네이버 api에서 발급받은 클라이언트 ID 입니다.
+VITE_NAVER_LOGIN_CLIENT_ID_DEV  // 테스트 용도의 클라이언트 ID 입니다.
 VITE_NAVER_LOGIN_CALLBACK_URL  // 네이버 소셜 로그인이 완료된 이후의 콜백 url 주소입니다. 네이버에서 등록한 주소와 정확히 일치해야 합니다.
+VITE_NAVER_LOGIN_CALLBACK_URL_DEV  // 테스트 용도의 콜백 url 주소입니다.
 VITE_NAVER_LOGIN_STATE  // 임의의 문자열입니다. 백엔드에서 사용할 때에도 동일한 값을 사용해야 합니다.
 ```
 
-#### 백엔드
+### 백엔드
 
 ```
 MONGO_DB_URL  // mongodb 주소입니다.
@@ -354,12 +392,14 @@ CLIENT_URL  // 프론트엔드 주소입니다.
 SERVER_URL  // 백엔드 서버 주소입니다.
 TOKEN_SECRET_KEY  // token secret에 사용되는 임의의 문자열입니다.
 NAVER_LOGIN_CLIENT_ID  // 네이버 api에서 발급받은 클라이언트 ID 입니다.
+NAVER_LOGIN_CLIENT_ID_DEV  // 테스트 용도의 클라이언트 ID 입니다.
 NAVER_LOGIN_CLIENT_SECRET  // 네이버 api에서 발급받은 클라이언트 secret입니다.
+NAVER_LOGIN_CLIENT_SECRET_DEV  // 테스트 용도의 클라이언트 secret입니다.
 ```
 
-### 빌드
+## 빌드
 
-#### 프론트엔드
+### 프론트엔드
 
 웹 어플리케이션으로 빌드할 경우, 빌드 결과물은 ./build 폴더에 생성되며  
 electron으로 빌드할 경우, 빌드 결과물은 ./dist 폴더에 생성됩니다.  
@@ -374,7 +414,7 @@ $ npm run build
 $ npm run build:e
 ```
 
-#### 백엔드
+### 백엔드
 
 백엔드 빌드 결과물은 ./dist 폴더에 생성됩니다.  
 
@@ -388,17 +428,17 @@ $ npm run build
 $ npm start
 ```
 
-## version
+# version
 node.js: 18.17.1(LTS), npm: 9.6.7 버전으로 개발되었습니다.  
 .nvmrc 파일이 포함되어 있으므로, nvm이 설치되어있는 환경이라면 따로 버전을 설정할 필요가 없습니다.  
 
-## 개발 역사
+# 개발 역사
 
-### 기획 mockup
+## 기획 mockup
 
 [figma 페이지로 이동하기](https://www.figma.com/file/hesgkPNGnrlidqc6lLjV8h/Code-Typing-Practice?node-id=0%3A1)
 
-## 소감
+# 소감
 
 <details>
 <summary><span style="font-size:18px">강민성</span></summary>
