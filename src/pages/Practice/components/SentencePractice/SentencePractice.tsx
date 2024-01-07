@@ -13,7 +13,7 @@ import {
   useUserInfoStore,
 } from '../../../../store/index';
 import theme from '../../../../styles/theme';
-import isKoreanInput from '../../../../utils/isKoreanInput';
+import isKoreanInput from '../../../../utils/isKoreanInput/isKoreanInput';
 import { getProgress } from '../WordPractice/utils/getProgress';
 
 import type { forbiddenKeyType } from '../../../../types/key';

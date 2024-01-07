@@ -12,7 +12,7 @@ import {
   useUserInfoStore,
 } from '../../../../store/index';
 import theme from '../../../../styles/theme';
-import isKoreanInput from '../../../../utils/isKoreanInput';
+import isKoreanInput from '../../../../utils/isKoreanInput/isKoreanInput';
 
 import type { forbiddenKeyType } from '../../../../types/key';
 
