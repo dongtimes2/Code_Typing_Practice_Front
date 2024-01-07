@@ -6,7 +6,9 @@ import { TokenController } from '../../utils/tokenController';
 
 const tokenController = new TokenController();
 
-export const BASE_URL = import.meta.env.VITE_SERVER_URL;
+export const BASE_URL = import.meta.env.DEV
+  ? import.meta.env.VITE_SERVER_URL_DEV
+  : import.meta.env.VITE_SERVER_URL;
 
 export const request = async <T>(params: AxiosRequestConfig) => {
   return axios({
