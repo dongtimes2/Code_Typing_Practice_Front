@@ -212,7 +212,7 @@ refresh token은 서버로부터 cookie에 담겨 전달되는데, httpOnly와 s
 로그인 정보는 모든 페이지에서 사용되기 때문에, 전역 상태관리 라이브러리에 유저 정보를 저장했으며, custom hook을 만들어 로그인 여부 확인 및 로그아웃 기능을 구현하였습니다. 이 때 custom hook은 전역 상태관리 라이브러리에 저장된 값을 기반으로 돌아가도록 하였습니다.  
 아래는 custom hook의 구조를 표현한 의사코드 입니다.
 
-```
+```jsx
 const useAuth = () => {
   const isLoggedin = 전역 상태관리 라이브러리 값();
   const setIsLoggedin = 전역 상태관리 라이브러리 값();
