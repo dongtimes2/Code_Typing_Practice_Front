@@ -1,6 +1,6 @@
 <div align="center" style="max-width: 100%;">
   <h1>Code Typing Practice</h1>
-  <img width="300" style="max-width: 100%" src="https://github.com/dongtimes2/Code_Typing_Practice_Back_Clone/assets/98700888/28b66ae5-79f2-4d5b-b629-fc7d4212dd20"/><br/>
+  <img width="300" style="max-width: 100%" src="https://github.com/user-attachments/assets/e06a175a-ed84-4007-8097-f302d9912c56"/><br/>
 </div>
 
 <hr/>
